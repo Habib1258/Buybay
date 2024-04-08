@@ -1,0 +1,234 @@
+{% load static %}
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <title>BuyBay</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp"
+    rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" ico href="{% static "img/LO.png" %}">
+    {% load static %}
+    <link rel="stylesheet" href="{% static "css/im.css" %}">
+    
+    
+</head>
+<body>
+    <div class="container">
+        <aside>
+            <div class="toggle">
+                <div class="logo">
+                    <img src="../img/LO.png">
+                </div>
+            </div>
+
+
+            <div class="sidebar">
+                <a href="index.html">
+                    <span class="material-icons-sharp">
+                        home
+                        </span>
+                    <h3>Homepage</h3>
+                </a>
+                <a href="profil.html">
+                    <span class="material-icons-sharp">
+                        account_circle
+                        </span>
+                    <h3>Profil</h3>
+                </a>
+                
+                <a href="#">
+                    <span class="material-icons-sharp">
+                        category
+                    </span>
+                    <h3>Categorie</h3>
+                </a>
+                <ul class="lis">
+                    <a href="im.html" id="a1" class="active1"><li><img src="../img/icons8-home-50.png" width="15px"> Houses</li></a>
+                    <a></a>
+                </ul><br>
+
+                <div class="fil">
+                    <h3 class="filtre">Type :</h3><br>
+                    <input type="checkbox" id="Villa" name="villa" value="villa">
+                    <label for="Villa"> villa</label><br>
+                    <input type="checkbox" id="Appartement" name="Appartement" value="Appartement">
+                    <label for="Appartement"> Appartement</label><br><br>
+                    <h3 class="filtre">Façade :</h3><br>
+                    <input type="checkbox" id="1" name="1" value="1">
+                    <label for="1"> 1</label><br>
+                    <input type="checkbox" id="2" name="2" value="2">
+                    <label for="2"> 2</label><br>
+                    <input type="checkbox" id="3" name="3" value="3">
+                    <label for="3"> 3</label><br>
+                    <input type="checkbox" id="4" name="4" value="4">
+                    <label for="4"> 4</label><br><br>
+                    <h3 class="filtre">Nombre piece :</h3><br>
+                    <input type="checkbox" id="F1" name="F1" value="F1">
+                    <label for="F1"> F1</label><br>
+                    <input type="checkbox" id="F2" name="F2" value="2">
+                    <label for="F2"> F2</label><br>
+                    <input type="checkbox" id="3" name="3" value="3">
+                    <label for="F3"> F3</label><br>
+                    <input type="checkbox" id="F4" name="4" value="4">
+                    <label for="F4"> F4</label><br>
+                    <input type="checkbox" id="F4" name="4" value="4">
+                    <label for="F5"> F5</label><br><br>
+                    <button type="submit"  class="butt">
+                        <span class="material-icons-sharp">
+                            tune
+                            </span> <h3>Filtre</h3></button>
+                </div>
+
+            </div>
+        </aside>
+
+        <main>
+            
+            <div class="sear">
+                <input type="text" placeholder="Search...">
+                <a href="#">
+                    <span class="material-icons-sharp">
+                        search
+                    </span>
+                </a>
+            </div>
+           
+           <a href="#"><div class="h1"><h1>Immobilier</h1></div></a>
+           <section class="sec2">
+                
+            <div class="blo-1">
+                <a href="item1.html"  rel="golf7">
+                    <img src="../img/d1.jpg" width="100%">
+                    <br>
+                    <h1>Maison F7</h1>
+                    <h3>tres belle maison </h3>
+                    <br>
+                    <h2>Prix : <span class="danger">7 milliards</span></h2>
+                </a>
+                
+            </div>
+            <div class="blo-1">
+                    <img src="../img/d2.jpg" width="100%" >
+                    <br>
+                    <h1>Maison F5</h1>
+                    <h3>spacieuse et dans un qarties calme </h3>
+                    <br>
+                    <h2>Prix : <span class="danger">4,3 milliards</span></h2>
+                
+            </div>
+            <div class="blo-1">
+                    <img src="../img/d3.jpg" width="100%" >
+                    <br>
+                    <h1>Maison f4</h1>
+                    <h3>tres belle maison </h3>
+                    <br>
+                    <h2>Prix : <span class="danger">1,3 milliards</span></h2>
+            </div>
+        </section>
+        <section class="sec2">
+                
+            <div class="blo-1">
+                <a href="item.html"  rel="golf7">
+                    <img src="../img/d4.jpg" width="100%">
+                    <br>
+                    <h1>Villa F4</h1>
+                    <h3>tres belle villa </h3>
+                    <br>
+                    <h2>Prix : <span class="danger">2,6 milliards</span></h2>
+                </a>
+                
+            </div>
+            <div class="blo-1">
+                    <img src="../img/d5.jpg" width="100%" >
+                    <br>
+                    <h1>villa F6</h1>
+                    <h3>tres belle Maison </h3>
+                    <br>
+                    <h2>Prix : <span class="danger">3,1 milliards</span></h2>
+                
+            </div>
+            <div class="blo-1">
+                    <img src="../img/d6.jpg" width="100%" >
+                    <br>
+                    <h1>Maison F3</h1>
+                    <h3>tres belle Maison </h3>
+                    <br>
+                    <h2>Prix : <span class="danger">1,9 milliards</span></h2>
+            </div>
+        </section>
+            <br>
+            <div class="Social">
+                <div class="header">
+                    <h2>Social Media </h2>
+                    <br>
+                        <a href="https://www.instagram.com/habib__mustapha/"><i class="fa fa-instagram" style="font-size:36px"></i></a>
+                        <a href="https://web.facebook.com/habib.mustapha.9210"><i class="fa fa-facebook" style="font-size:36px"></i></a>
+                        <a href="https://twitter.com/Habib49485244"><i class="fa fa-twitter" style="font-size:36px"></i></a>
+                        <a href="https://github.com/Habib1258"><i class="fa fa-github" style="font-size:36px"></i></a>
+                </div>
+                
+                
+            </div>
+        </main>
+        <!-- end main content--> 
+        <div class="cont">
+            <div class="nav">
+                <a href="#"><div class="add">
+                    <span class="material-icons-sharp">
+                        add_circle_outline
+                    </span>
+                </div></a>
+                <a href="lo.html">
+                    <span class="material-icons-sharp">
+                        login
+                    </span>
+                    <h3>login</h3>
+                </a>
+                <div class="dark-mode">
+                    <span class="material-icons-sharp active">
+                        light_mode
+                    </span>
+                    <span class="material-icons-sharp">
+                        dark_mode
+                    </span>
+                </div>
+                <div class="prof">
+                    <a href="#"><div class="profile-pho">
+                        <img src="../img/pro.webp" style="width: 30px; border-radius: 50%;">
+                    </div></a>
+                </div>
+
+                
+            </div>
+
+            <div class="user-prof">
+                <div class="logo">
+                    <img src="../img/LO.png">
+                    <h2>BuyBay</h2>
+                    <h3>Discover, Bid, Buy - Your Way to Great Deals at BuyBay!</h3>
+                </div>
+            </div>
+            <br>
+            
+        </div>
+
+
+
+
+    
+    </div>
+    <div style="margin-bottom: 200px;"></div>
+
+    <script src="{% static "/JS/index.js" %}"></script>
+
+    
+
+    
+
+    
+    
+
+</body>
+</html>

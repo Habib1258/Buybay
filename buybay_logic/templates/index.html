@@ -1,0 +1,303 @@
+{% load static %}
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <title>BuyBay</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp"
+    rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" ico href="{% static "img/LO.png" %}">
+    {% load static %}
+    <link rel="stylesheet" href="{% static "css/index.css" %}">
+    
+    
+</head>
+<body>
+    <div class="container">
+        <aside>
+            <div class="toggle">
+                <div class="logo">
+                    <img src="{% static "img/LO.png" %}">
+                </div>
+            </div>
+
+            <div class="sidebar">
+                <a href="index.html" class="active">
+                    <span class="material-icons-sharp">
+                        home
+                        </span>
+                    <h3>Homepage</h3>
+                </a>
+                <a href="profil.html">
+                    <span class="material-icons-sharp">
+                        account_circle
+                        </span>
+                    <h3>Profil</h3>
+                </a>
+                
+
+                <a href="categorie.html">
+                    <span class="material-icons-sharp" >
+                        category
+                    </span>
+                    <h3>Categories</h3><br>
+                </a>
+                <ul class="lis">
+                    <a href="cars.html" id="a1"><li><img src="{% static "/img/icons8-car-50 (1).png" %}" width="15px"> Cars</li></a> 
+                    <a href="im.html" id="a1"><li><img src="{% static "/img/icons8-home-50.png" %}" width="15px"> Houses</li></a>
+                    <a href="pie.html" id="a1"><li><img src="{% static "/img/icons8-watch-64.png" %}" width="15px"> Accesories</li></a>
+                    <a href="cars.html" id="a1"><li><img src="{% static "/img/icons8-laptop-50 (1).png" %}" width="15px"> Laptop & Phones</li></a> 
+                    <a href="pie.html" id="a1"><li><img src="{% static "/img/icons8-shoes-64 (2).png" %}" width="15px"> shoes</li></a>
+                    <a href="cars.html" id="a1"><li ><img src="{% static "/img/icons8-washing-machine-24 (1).png" %}" width="15px"> home applience</li></a>
+                    <a></a>
+                </ul>
+            </div>
+        </aside>
+
+        <main>
+            
+            <div class="sear">
+                
+                <a href="#">
+                    <input type="text" placeholder="Search...">
+                    <button type="submit" class="bouu"><img src="{% static "/img/sharp_search_black_18dp.png" %}" alt=""></button>
+                </a>
+            </div>
+            <a href="cars.html"><div class="see1" style="padding-top: 40px;"><h1>Categories</h1></div></a>
+            <section class="sec2">
+                
+                <a href="categorie.html" class="see"><h2>See All</h2></a>
+                <div class="blo-2">
+                    <a href="cars.html"  rel="golf7">
+                        <img src="{% static "/img/21647_m.jpg" %}" width="90%">
+                        <br>
+                    </a>
+                    <h3 style="text-align: center; ">Cars</h3>
+                </div>
+                
+                <div class="blo-2">
+                       <a href="shoes.html"><img src="{% static "/img/shoes.jpg" %}" width="100%" >
+                        <br>
+                    </a>
+                    <h3 style="text-align: center; ">Shoes</h3>
+                </div>
+                
+                <div class="blo-2">
+                        <a href="pie.html"><img src="{% static "/img/05_Watcheseng.jpg" %}" width="100%" >
+                        <br>
+                    </a>
+                    <h3>parts & Accesories</h3>
+                </div>
+                
+                <div class="blo-2">
+                    <a href="lap.html">
+                    <img src="{% static "/img/05_Watcheseng.jpg" %}" width="100%">
+                        <br>
+                    </a>
+                    <h3>Laptop & Phones</h3>
+                </div>
+                
+            </section>
+            
+            
+           <!--cars-->
+           <a href="cars.html"><div class="h1" style="padding-top: 10px;"><h1>Cars</h1></div></a>
+            
+                <section class="sec2">
+                <div class="blo-1">
+                    <a href="it.html">
+                        <img src="{% static "/img/golf.jpg" %}" width="100%">
+                        
+                        <br>
+                        <h1>Golf 7 R</h1>
+                        <h3>tres belle voiture </h3>
+                        <br>
+                        <h2>Prix : <span class="danger">290 M</span></h2>
+                    </a>
+                    <button type="submit" class="bun">
+                        <img src="{% static "/img/fa.png" %}" class="im"></button>
+                </div>
+                <div class="blo-1">
+                    <a href="it1.html"   rel="Saidal website"  >
+                        <img src="{% static "/img/bmw.jpg" %}" width="100%" >
+                        <br>
+                        <h1>Bmw m5</h1>
+                        <h3>tres belle voiture </h3>
+                        <br>
+                        <h2>Prix : <span class="danger">1,1 milliards</span></h2>
+                    </a>
+                    <button type="submit" class="bun">
+                        <img src="{% static "/img/fa.png" %}" class="im"></button>
+                </div>
+                <div class="blo-1">
+                    <a href="it2.html">
+                        <img src="{% static "/img/suv.jpg" %}" width="100%" >
+                        <br>
+                        <h1>Range rover</h1>
+                        <h3>tres belle voiture </h3>
+                        <br>
+                        <h2>Prix : <span class="danger">600 M</span></h2>
+                    </a>
+                    <button type="submit" class="bun">
+                        <img src="{% static "/img/sharp_favorite_border_white_18dp.png" %}" class="im"></button>
+                    
+                </div>
+            </section>
+            <!--immobilier-->
+            <br>
+            <a href="im.html"><div class="h1"><h1>Immobilier</h1></div></a>
+            <br>
+            <section class="sec2">
+                <div class="blo-1">
+                    <a href="item1.html">
+                        <img src="{% static "/img/d1.JPG" %}" width="100%">
+                        <h1>Maison F8 </h1>
+                            <h3>Une grande maison avec piscine</h3>
+                            <br>
+                            <h2>Prix : <span class="danger">4 milliards</span></h2>
+                    </a>
+                    <button type="submit" class="bun">
+                        <img src="{% static "/img/sharp_favorite_border_white_18dp.png" %}" class="im"></button>
+                </div>
+                <div class="blo-1">
+                    <a href="item2.html">
+                        <img src="{% static "/img/d2.jpg" %}" width="100%" >
+                        <br>
+                        <h1>Maison f5</h1>
+                        <h3>tres belle maison </h3>
+                        <br>
+                        <h2>Prix : <span class="danger">3,4 milliards</span></h2>
+                    </a>
+                    <button type="submit" class="bun">
+                        <img src="{% static "/img/sharp_favorite_border_white_18dp.png" %}" class="im"></button>
+                </div>
+                <div class="blo-1">
+                    <a href="item3.html">
+                        <img src="{% static "/img/d3.jpg" %}" width="100%" >
+                        <br>
+                        <h1>maison F3</h1>
+                        <h3>tres belle villa </h3>
+                        <br>
+                        <h2>Prix : <span class="danger">1,2 milliards</span></h2>
+                    </a>
+                    <button type="submit" class="bun">
+                        <img src="{% static "/img/fa.png" %}" class="im"></button>
+                </div>
+            </section>
+            <!--piece-->
+            <br>
+            <a href="pie.html"><div class="h1"><h1>Piece d'etacher</h1></div></a>
+            <br>
+            <section class="sec2">
+                <div class="blo-1">
+                    <a href="ima/d1.jpg" target="_blank" rel="Saidal website">
+                        <img src="{% static "/img/cr.jpg" %}" width="100%">
+                        <h1>Cremailler</h1>
+                            <h3>etat 10/10</h3>
+                            <br>
+                            <h2>Prix : <span class="danger">16 M</span></h2>
+                    </a>
+                    
+                </div>
+                <div class="blo-1">
+                    <a href="{% static "ima/d2.jpg" %}"  target="_blank" rel="Saidal website"  >
+                        <img src="{% static "/img/ja.jpg" %}" width="100%" >
+                        <br>
+                        <h1>Jante alliage 19</h1>
+                        <h3>tres bonne etat</h3>
+                        <br>
+                        <h2>Prix : <span class="danger">2 M</span></h2>
+                    </a>
+                    
+                </div>
+                <div class="blo-1">
+                    <a href="ima/d3.jpg" target="_blank" rel="Saidal website">
+                        <img src="{% static "/img/tu.jpg" %}" width="100%" >
+                        <br>
+                        <h1>Turbo VW</h1>
+                        <h3>Turbo pour les voitures VW</h3>
+                        <br>
+                        <h2>Prix : <span class="danger">10 M</span></h2>
+                    </a>
+                </div>
+            </section>
+            <br>
+            
+        </main>
+        
+        <!-- end main content--> 
+        <div class="cont">
+            <div class="nav">
+                <a href="new.html"><div class="add">
+                    <span class="material-icons-sharp">
+                        add_circle_outline
+                    </span>
+                </div></a>
+                <a href="lo.html">
+                    <span class="material-icons-sharp">
+                        login
+                    </span>
+                    <h3>login</h3>
+                </a>
+                <div class="dark-mode" onclick="toggleDarkMode()">
+                    <span class="material-icons-sharp active">
+                        light_mode
+                    </span>
+                    <span class="material-icons-sharp">
+                        dark_mode
+                    </span>
+                </div>
+                <div class="prof">
+                    <a href="profil.html"><div class="profi">
+                        <img src="{% static "/img/pro.webp" %}" >
+                    </div></a>
+                </div>
+
+                
+            </div>
+
+            <div class="user-prof">
+                <div class="logo">
+                    <img src="{% static "/img/LO.png" %}" style="width: 70%;">
+                    <h2>BuyBay</h2>
+                    <h3>Discover, Bid, Buy - Your Way to Great Deals at BuyBay!</h3>
+                </div>
+            </div>
+            <br>
+            
+        </div>
+
+
+
+
+    
+    </div>
+
+    <div class="Social">
+        <div class="header">
+            <h2>Social Media </h2>
+            <br>
+                <a href="https://www.instagram.com/habib__mustapha/"><i class="fa fa-instagram" style="font-size:36px"></i></a>
+                <a href="https://web.facebook.com/habib.mustapha.9210"><i class="fa fa-facebook" style="font-size:36px"></i></a>
+                <a href="https://twitter.com/Habib49485244"><i class="fa fa-twitter" style="font-size:36px"></i></a>
+                <a href="https://github.com/Habib1258"><i class="fa fa-github" style="font-size:36px"></i></a>
+        </div>
+        
+        
+    </div>
+    <div style="margin-bottom: 200px;"></div>
+
+        <script src="{% static "/JS/index.js" %}"></script>
+       
+
+    
+
+    
+
+    
+    
+
+</body>
+</html>

@@ -1,0 +1,188 @@
+{% load static %}
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <title>BuyBay</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp"
+    rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" ico href="{% static "img/LO.png" %}">
+    {% load static %}
+    <link rel="stylesheet" href="{% static "css/new.css" %}">
+</head>
+<body>
+    
+    <div class="container">
+        <aside>
+            <div class="toggle">
+                <div class="logo">
+                    <img src="{% static "img/LO.png" %}">
+                </div>
+            </div>
+
+            <div class="sidebar">
+                <a href="index.html" >
+                    <span class="material-icons-sharp">
+                        home
+                        </span>
+                    <h3>Homepage</h3>
+                </a>
+                <a href="profil.html">
+                    <span class="material-icons-sharp">
+                        account_circle
+                        </span>
+                    <h3>Profil</h3>
+                </a>
+                
+
+                <a href="categorie.html">
+                    <span class="material-icons-sharp" >
+                        category
+                    </span>
+                    <h3>Categories</h3><br>
+                </a>
+                <ul class="lis">
+                    <a href="cars.html" id="a1"><li><img src="{% static "/img/icons8-car-50 (1).png" %}" width="15px"> Cars</li></a> 
+                    <a href="im.html" id="a1"><li><img src="{% static "/img/icons8-home-50.png" %}" width="15px"> Houses</li></a>
+                    <a href="pie.html" id="a1"><li><img src="{% static "/img/icons8-watch-64.png" %}" width="15px"> Accesories</li></a>
+                    <a href="cars.html" id="a1"><li><img src="{% static "/img/icons8-laptop-50 (1).png" %}" width="15px"> Laptop & Phones</li></a> 
+                    <a href="pie.html" id="a1"><li><img src="{% static "/img/icons8-shoes-64 (2).png" %}" width="15px"> shoes</li></a>
+                    <a href="cars.html" id="a1"><li ><img src="{% static "/img/icons8-washing-machine-24 (1).png" %}" width="15px"> home applience</li></a>
+                    <a></a>
+                </ul>
+            </div>
+        </aside>
+
+        <main>
+            
+            <section class="sec4">
+                <div class="blo-4">
+                    <h2>Sell Your Item</h2>
+                        
+
+                        <div class="drop-zone" id="drop-zone">
+                            <p>Drag & Drop your images here</p>
+                            <span for="up" class="material-icons-sharp">
+                                cloud_upload
+                            </span>
+                            <input type="file" class="up" id="file-input" value="" multiple>
+                            
+                            
+                        </div>
+                        <div class="preview-container" id="preview-container"></div>
+                        
+                    
+                        
+                            <div class="dropdown">
+                                <button onclick="myFun()" class="dropbtn">category</button>
+                                <div id="myDropdown" class="dropdown-content">
+                                  <a href="#cars" class="az">cars</a>
+                                  <a href="#laptop & phone" class="az">laptop & phone</a>
+                                  <a href="#immobilier" class="az">immobiler</a>
+                                  <a href="#shoes" class="az">shoes</a>
+                                  <a href="#piece d'etacher" class="az">piece d'etacher</a>
+                                  <a href="#home applience" class="az">home applience</a>
+                                  <a href="#Accesories" class="az">Accesories</a>
+                                </div>
+                             <br>
+                        
+                        <div class="info">
+                            <label for="item_name">Item Name:</label>
+                            <input type="text" id="item_name" name="item_name" required><br>
+
+                            <label for="price">Price:</label>
+                            <input type="text" id="price" name="price" required><br>
+                
+                            <label for="description">Description:</label>
+                            <textarea id="description" name="description" required></textarea><br>
+                
+                            
+                
+                            
+                
+                            <input type="submit" value="Submit">
+                        </div>
+                </div>
+            </section>
+            
+        </main>
+        
+        <!-- end main content--> 
+        <div class="cont">
+            <div class="nav">
+                <a href="new.html"><div class="add">
+                    <span class="material-icons-sharp">
+                        add_circle_outline
+                    </span>
+                </div></a>
+                <a href="lo.html">
+                    <span class="material-icons-sharp">
+                        login
+                    </span>
+                    <h3>login</h3>
+                </a>
+                <div class="dark-mode" onclick="toggleDarkMode()">
+                    <span class="material-icons-sharp active">
+                        light_mode
+                    </span>
+                    <span class="material-icons-sharp">
+                        dark_mode
+                    </span>
+                </div>
+                <div class="prof">
+                    <a href="profil.html"><div class="profi">
+                        <img src="{% static "/img/pro.webp" %}" >
+                    </div></a>
+                </div>
+
+                
+            </div>
+
+            <div class="user-prof">
+
+                <div class="logo">
+                    <img src="{% static "/img/LO.png" %}" style="width: 70%;">
+                    <h2>BuyBay</h2>
+                    <h3>Discover, Bid, Buy - Your Way to Great Deals at BuyBay!</h3>
+                </div>
+            </div>
+            <br>
+            
+        </div>
+
+
+
+
+    
+    </div>
+
+    <div class="Social">
+        <div class="header">
+            <h2>Social Media </h2>
+            <br>
+                <a href="https://www.instagram.com/habib__mustapha/"><i class="fa fa-instagram" style="font-size:36px"></i></a>
+                <a href="https://web.facebook.com/habib.mustapha.9210"><i class="fa fa-facebook" style="font-size:36px"></i></a>
+                <a href="https://twitter.com/Habib49485244"><i class="fa fa-twitter" style="font-size:36px"></i></a>
+                <a href="https://github.com/Habib1258"><i class="fa fa-github" style="font-size:36px"></i></a>
+        </div>
+        
+        
+    </div>
+    <div style="margin-bottom: 200px;"></div>
+
+        <script src="{% static "/JS/index.js" %}"></script>
+        <script src="{% static "/JS/script.js" %}"></script>
+       
+
+    
+
+    
+
+    
+    
+
+
+</body>
+</html>

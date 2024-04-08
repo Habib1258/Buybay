@@ -1,0 +1,216 @@
+{% load static %}
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <title>BuyBay</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp"
+    rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" ico href="{% static "img/LO.png" %}">
+    {% load static %}
+    <link rel="stylesheet" href="{% static "css/index.css" %}">
+    
+    
+</head>
+<body>
+    <div class="container">
+        <aside>
+            <div class="toggle">
+                <div class="logo">
+                    <img src="../img/LO.png">
+                </div>
+            </div>
+
+
+            <div class="sidebar">
+                <a href="index.html" >
+                    <span class="material-icons-sharp">
+                        home
+                        </span>
+                    <h3>Homepage</h3>
+                </a>
+                <a href="prof.html">
+                    <span class="material-icons-sharp">
+                        account_circle
+                        </span>
+                    <h3>Profil</h3>
+                </a>
+                
+                
+                <a href="#">
+                    <span class="material-icons-sharp">
+                        category
+                    </span>
+                    <h3>Categorie</h3>
+                </a>
+                <ul class="lis">
+                    <a href="cars.html" id="a1" ><li><img src="../img/icons8-car-50 (1).png" width="15px"> Cars</li></a> 
+                    <a href="im.html" id="a1"><li><img src="../img/icons8-home-50.png" width="15px"> Houses</li></a>
+                    <a href="pie.html" id="a1"><li><img src="../img/icons8-watch-64.png" width="15px"> Accesories</li></a>
+                    <a href="cars.html" id="a1"><li><img src="../img/icons8-laptop-50 (1).png" width="15px"> Laptop & Phones</li></a> 
+                    <a href="pie.html" id="a1"><li><img src="../img/icons8-shoes-64 (2).png" width="15px"> shoes</li></a>
+                    <a href="cars.html" id="a1"><li ><img src="../img/icons8-washing-machine-24 (1).png" width="15px"> home applience</li></a>
+                    <a></a>
+                </ul>
+
+                
+            </div>
+        </aside>
+
+        <main>
+            
+            <div class="sear">
+                <input type="text" placeholder="Search...">
+                <a href="#">
+                    <span class="material-icons-sharp">
+                        search
+                    </span>
+                </a>
+            </div>
+           <!--cars-->
+           
+            <a href="cars.html"><div class="h1" style="padding-top: 10px;"><h1>Parts & Accesories</h1></div></a>
+            <section class="sec2">
+                
+                <div class="blo-1">
+                    <a href="it.html"  rel="golf7">
+                        <img src="../img/cr.jpg" width="100%">
+                        <br>
+                        <h1>Cremailler</h1>
+                        <h3>tres bonne etat  </h3>
+                        <br>
+                        <h2>Prix : <span class="danger">15 M</span></h2>
+                    </a>
+                    
+                </div>
+                <div class="blo-1">
+                       <a href="it1.html"><img src="../img/br.jpg" width="100%" >
+                        <br>
+                        <h1>Disque de frien</h1>
+                        <h3>Etat 10/10</h3>
+                        <br>
+                        
+                        <h2>Prix : <span class="danger">1,1 M</span></h2>
+                    </a>
+                </div>
+                <div class="blo-1">
+                        <a href="it2.html"><img src="../img/05_Watcheseng.jpg" width="100%" >
+                        <br>
+                        <h1>Rolex</h1>
+                        <h3>tres belle Montre </h3>
+                        <br>
+                        
+                        <h2>Prix : <span class="danger">12 M</span></h2>
+                    </a>
+                </div>
+            </section>
+            <br>
+            <section class="sec2">
+                <div class="blo-1">
+                    <a href="it4.html">
+                    <img src="../img/mer.jpg" width="100%">
+                        <br>
+                        <h1>Mercedes GT63</h1>
+                        <h3>tres belle voiture </h3>
+                        <br>
+                        <h2>Prix : <span class="danger">2 milliards</span></h2>
+                    </a>
+                </div>
+                <div class="blo-1">
+                    <a href="it5.html">
+                        <img src="../img/bmw1.jpg" width="100%" >
+                        <br>
+                        <h1>BMW M5</h1>
+                        <h3>tres belle voiture </h3>
+                        <br>
+                        <h2>Prix : <span class="danger">1,1 milliards</span></h2>
+                    </a>
+                </div>
+                <div class="blo-1">
+                    <a href="it6.html">
+                        <img src="../img/gol.jpg" width="100%" >
+                        <br>
+                        <h1>Golf 8 R</h1>
+                        <h3>tres belle voiture </h3>
+                        <br>
+                        <h2>Prix : <span class="danger">900 M</span></h2>
+                    </a>
+                </div>
+            </section>
+            <br>
+            
+        </main>
+        <!-- end main content--> 
+        <div class="cont">
+            <div class="nav">
+                <a href="#"><div class="add">
+                    <span class="material-icons-sharp">
+                        add_circle_outline
+                    </span>
+                </div></a>
+                <a href="lo.html">
+                    <span class="material-icons-sharp">
+                        login
+                    </span>
+                    <h3>login</h3>
+                </a>
+                <div class="dark-mode">
+                    <span class="material-icons-sharp active">
+                        light_mode
+                    </span>
+                    <span class="material-icons-sharp">
+                        dark_mode
+                    </span>
+                </div>
+                <div class="prof">
+                    <a href="#"><div class="profi">
+                        <img src="../img/pro.webp" >
+                    </div></a>
+                </div>
+
+                
+            </div>
+
+            <div class="user-prof">
+                <div class="logo">
+                    <img src="../img/LO.png" class="img">
+                    <h2>BuyBay</h2>
+                    <h3>Discover, Bid, Buy - Your Way to Great Deals at BuyBay!</h3>
+                </div>
+            </div>
+            <br>
+            
+        </div>
+
+
+
+
+    
+    </div>
+    <div class="Social">
+        <div class="header2">
+            <h2>Social Media </h2>
+            <br>
+                <a href="https://www.instagram.com/habib__mustapha/"><i class="fa fa-instagram" style="font-size:36px"></i></a>
+                <a href="https://web.facebook.com/habib.mustapha.9210"><i class="fa fa-facebook" style="font-size:36px"></i></a>
+                <a href="https://twitter.com/Habib49485244"><i class="fa fa-twitter" style="font-size:36px"></i></a>
+                <a href="https://github.com/Habib1258"><i class="fa fa-github" style="font-size:36px"></i></a>
+        </div>
+        
+        
+    </div>
+    <div style="margin-bottom: 200px;"></div>
+
+    <script src="{% static "/JS/index.js" %}"></script>
+
+    
+
+    
+
+    
+    
+
+</body>
+</html>

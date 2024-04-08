@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+TAS+Beginner&family=Poppins:ital,wght@1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+:root{
+    --color-primary: #6C9BCF;
+    --color-danger: #FF0060;
+    --color-success: #0C1232;
+    --color-warning: #F7D060;
+    --color-white: #fff;
+    --color-info-dark: #7d8da1;
+    --color-dark: #363949;
+    --color-light: rgba(132, 139, 200, 0.18);
+    --color-dark-variant: #677483;
+    --color-background: #d9d9d9;
+
+    --card-border-radius: 2rem;
+    --border-radius-1: 0.4rem;
+    --border-radius-2: 1.2rem;
+
+    --card-padding: 1.8rem;
+    --padding-1: 1.2rem;
+
+    --box-shadow: 0 2rem 3rem var(--color-light);
+}
+
+.dark-mode-variables{
+    --color-background: #181a1e;
+    --color-white: #202528;
+    --color-dark: #edeffd;
+    --color-dark-variant: #a3bdcc;
+    --color-light: rgba(0, 0, 0, 0.4);
+    --box-shadow: 0 2rem 3rem var(--color-light);
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    appearance: 0;
+    
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: var(--color-background);
+    color: var(--color-dark);
+    margin: 0;
+    user-select: none;
+    font-size: 0.88rem;
+    color: #000;   
+}
+
+.WebContainer{
+    width:100%;
+    min-width:1000px;
+    height:auto;
+}
+
+.danger{
+    color: var(--color-danger);
+}
+
+.cara {
+    font-size: large;
+    font-style: italic;
+    font:bolder;
+}
+
+h1{
+    font-weight: 800;
+    font-size: 1.8rem;
+}
+
+
+h2{
+    font-weight: 600;
+    font-size: 1.4rem;
+}
+
+
+h3{
+    font-weight: 400;
+    font-size: 0.87rem;
+}
+
+
+small{
+    font-size: 0.76rem;
+}
+
+
+p{
+    color: var(--color-dark-variant);
+}
+
+
+b{
+    color: var(--color-dark);
+}
+
+
+
+
+.container1 {
+    align-self: center;
+    background-color: var(--color-white);
+    margin-right: 600px;
+    margin-top: 100px;
+    margin-left: 600px; 
+    border-radius: var(--border-radius-2);
+    border: 1;
+    box-shadow: var(--box-shadow);
+    cursor: pointer;
+    width: 25em;
+}
+
+.container1 :hover{
+    box-shadow:  0 0 11px var(--box-shadow);
+}
+
+
+
+.container1 .ma{
+    align-self: center;
+    opacity: 100%;
+    color: #000;
+    text-align: center;
+    margin-left: 40px;
+}
+
+.container1 .logo{
+    align-self: center;
+    padding-top: 30px;
+    width: 100%;
+    opacity: 100%;
+    color: #000;
+    text-align: center;
+}
+
+
+.container1 .ma label{
+    align-self: center;
+    float: left;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 50px;
+    padding-left: 5px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: large;
+    text-decoration: underline;
+}
+
+.container1 .ma input{
+    align-self: center;
+    margin-left: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 50px;
+    padding-left: 5px;
+    border-radius: var(--border-radius-1);
+    text-align: left;
+    border-style: hidden;
+}
+
+.container1 .ma input:hover{
+    border-style: solid;
+    border-color: var(--color-info-dark);
+}
+
+.container1 .inpu {
+    margin-right: 25px;
+    margin-left: 10px;
+}
+
+.container1 .ma .ico{
+    color: #000;
+}
+
+
+
+.container1 .but {
+    border-radius: var(--border-radius-2);
+    background-color: var(--color-danger);
+    width: 50%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-right: 40px;
+    padding: 10px;
+    font-size: large;
+    cursor: pointer;
+}
+
+.container1 .p {
+    padding-right: 10px;
+    padding-bottom: 10px;
+    margin-right: 25px;
+    color: var(--color-dark);
+}

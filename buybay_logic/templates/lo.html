@@ -1,0 +1,72 @@
+{% load static %}
+<html lang="en">
+
+<head>
+    <title>Login</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" ico href="{% static "img/LO.png" %}">
+    {% load static %}
+    <link rel="stylesheet" href="{% static "css/lo.css" %}">
+</head>
+
+<body>
+
+    <div class="container1">
+        <div class="logo">
+            <img src="{% static "img/LO.png" %}" width="210" height="100" class=" ">
+            <h1 style="padding: 10px; text-decoration: underline;">Log in</h1>
+        </div>
+
+        <div class="ma">
+
+                
+                    <label for="" class="label">First-Name</label>
+                    <div class="in">
+                        <input class="inpu" type="text" name="First-Name" placeholder="First-Name" required>
+                        <span class="ico">
+                            <i class="fa fa-user"></i>
+                        </span>
+                    </div>
+
+                
+                    <label for="" class="label">Name</label>
+                    <div class="in">
+                        <input class="inpu" type="text" name="Name" placeholder="Name" required>
+                        <span class="ico">
+                            <i class="fa fa-user"></i>
+                        </span>
+                    </div>
+                
+
+                
+                    <label for="" class="label">E-mail</label>
+                    <div class="in">
+                        <input class="inpu" type="mail" name="mail" placeholder="E-mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
+                        <span class="ico">
+                            <i class="fa fa-envelope"></i>
+                        </span>
+                    </div>
+                
+
+                
+                    <label for="" class="label">password</label>
+                    <div class="in">
+                        <input class="inpu" type="password" name="mdp" placeholder="Password" required>
+                        <span class="ico">
+                            <i class="fa fa-lock"></i>
+                        </span>
+                    </div>
+                
+
+                    <a href="index.html"><button class="but" type="submit" value=""><h2 style="font-size: large;">LOG IN</h2> </button></a>
+                    
+                
+                <p class="p">If you don't have an acount, <a href="si.html" style="color: blue;"> sign up here!</a></p>
+        </div>
+    </div>
+    <div style="margin-bottom: 200px;"></div>
+</body>
+
+</html>
