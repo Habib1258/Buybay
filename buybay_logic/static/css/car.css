@@ -680,10 +680,10 @@ main .content{
 
 
 .drop-btn {
-    background-color: var(--color-danger);
+    background-color: var(--color-primary);
     color: var(--color-dark);
     border-radius: var(--border-radius-1);
-    width: 100%;
+    width: 70%;
     padding: 6px;
     font-size: 16px;
     border: none;
@@ -691,7 +691,7 @@ main .content{
   }
   
   .drop-btn:hover{
-    background-color: var(--color-primary);
+    background-color: var(--color-danger);
   }
   
   #myInput {
@@ -732,7 +732,7 @@ main .content{
     position: absolute;
     
     background-color: var(--color-white);
-    width: 230px;
+    width: 200px;
     border-radius: var(--border-radius-1);
     border: none;
     overflow: hidden;
@@ -741,7 +741,7 @@ main .content{
   }
   
   .dropdown-content .az {
-    color: black;
+    color: var(--color-dark);
     padding: 12px 16px;
     margin-left: 0;
     text-decoration: none;
