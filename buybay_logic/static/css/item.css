@@ -16,6 +16,8 @@
     --card-border-radius: 2rem;
     --border-radius-1: 0.4rem;
     --border-radius-2: 1.2rem;
+    --border-radius-3: 50%;
+    --border-radius-4: 100%;
 
     --card-padding: 1.8rem;
     --padding-1: 1.2rem;
@@ -255,6 +257,10 @@ aside .sidebar .messeges{
     height: 1.2rem;
 }
 
+
+
+
+
 .sear {
     text-align: center;
     padding-top: 20px;
@@ -267,6 +273,7 @@ aside .sidebar .messeges{
 }
 
 .sear input{
+    position: relative;
     padding: 7px;
     width: 25em;
     border: none;
@@ -274,6 +281,29 @@ aside .sidebar .messeges{
     text-align: left;
     display: inline-table;
     border-radius: var(--border-radius-2);
+    
+    
+}
+
+.bouu {
+    position: absolute;
+    top: 35px;
+    left: 800px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    opacity: 1;
+}
+
+
+
+.bun:hover{
+    background-color: #fff5;
+}
+
+.bun .im{
+    width: 20px;
+    height: auto;
 }
 
 
@@ -339,24 +369,7 @@ aside .sidebar .messeges{
     scrollbar-width: none;
 }
 
-.inf1 {
-    display: grid;
-    align-self: center;
-    align-items: center;
-    align-content: center;
-    grid-template-columns: repeat(4,1fr);
-    overflow-x: auto;
-    width: 700px;
-    height: auto;
-    scrollbar-width: none;
-}
 
-.inf1 .image {
-    width: 700px;
-    height: 400px;
-    object-fit: cover;
-    border-radius: 30px;
-}
 
 .po{
     border-radius: 10px;
@@ -400,6 +413,7 @@ aside .sidebar .messeges{
 }
 
 .ret {
+    position: relative;
     padding: 0px;
     padding-bottom: 0;
     width: 50px;
@@ -408,26 +422,10 @@ aside .sidebar .messeges{
     border: none;
     box-shadow: 0 2rem 3rem var(--color-light);
     cursor: pointer;
+    opacity: 1;
 }
 
-.butt{
-    position: absolute;
-    top: 55%;
-    left: 22%;
-    width: 82%;
-    display: flex;
-    justify-content: space-between;
-}
 
-.butt .ne{
-    border: none;
-    border-radius: 50%;
-    font: bold;
-    width: 35px;
-    height: 35px;
-    background-color: #fff5;
-    cursor: pointer;
-}
 
 .blo1{
 	
@@ -551,12 +549,66 @@ aside .sidebar .messeges{
 }
 
 .cont .social  {
-    padding-left: 100px;
+    padding-left: 200px;
     gap: 12rem;
     cursor: pointer;
     margin-top: 50px;
+    margin-right: 300px;
+    float: left;
 }
 
+.header {
+    float: left;
+    text-align: center;
+    align-items: center;
+    padding: 1rem;
+    margin-left: 320px;
+}
+
+#icon{
+    gap: 20px;
+    text-align: center;
+}
 .add{
     cursor: pointer;
 }
+
+
+.slider {
+    position: relative;
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    
+  }
+  
+  .slides {
+    display: flex;
+  }
+  
+  .slides img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--border-radius-2);
+  }
+  
+  button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #ffffff;
+    opacity: 0.4;
+    border-radius: var(--border-radius-4);
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  .pr {
+    left: 0;
+  }
+  
+  .ne {
+    right: 0;
+  }
+  

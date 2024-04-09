@@ -19,7 +19,7 @@
         <aside>
             <div class="toggle">
                 <div class="logo">
-                    <img src="../img/LO.png">
+                    <img src="{% static "/img/LO.png" %}">
                 </div>
             </div>
 
@@ -37,120 +37,91 @@
                         </span>
                     <h3>Profil</h3>
                 </a>
-                
-                
-                <a href="#" >
+                <a href="#" class="active">
                     <span class="material-icons-sharp">
                         category
                     </span>
                     <h3>Categorie</h3>
                 </a>
+                
+
                 <ul class="lis">
-                    <a href="cars.html" class="a1"><li><img src="../img/icons8-car-50 (1).png" width="15px"> Cars</li></a> 
-                    <a href="im.html" class="a1"><li><img src="../img/icons8-home-50.png" width="15px"> Houses</li></a>
-                    <a href="pie.html" class="a1"><li><img src="../img/icons8-watch-64.png" width="15px"> Accesories</li></a>
-                    <a href="cars.html" class="a1"><li><img src="../img/icons8-laptop-50 (1).png" width="15px"> Laptop & Phones</li></a> 
-                    <a href="pie.html" class="a1"><li><img src="../img/icons8-shoes-64 (2).png" width="15px"> shoes</li></a>
-                    <a href="cars.html" class="a1"><li ><img src="../img/icons8-washing-machine-24 (1).png" width="15px"> home applience</li></a>
+                    <a href="cars.html" id="a1"><li><img src="{% static "/img/icons8-car-50 (1).png" %}" width="15px"> Cars</li></a> 
+                    <a href="im.html" id="a1"><li><img src="{% static "/img/icons8-home-50.png" %}" width="15px"> Houses</li></a>
+                    <a href="pie.html" id="a1"><li><img src="{% static "/img/icons8-watch-64.png" %}" width="15px"> Accesories</li></a>
+                    <a href="cars.html" id="a1"><li><img src="{% static "/img/icons8-laptop-50 (1).png" %}" width="15px"> Laptop & Phones</li></a> 
+                    <a href="pie.html" id="a1"><li><img src="{% static "/img/icons8-shoes-64 (2).png" %}" width="15px"> shoes</li></a>
+                    <a href="cars.html" id="a1"><li ><img src="{% static "/img/icons8-washing-machine-24 (1).png" %}" width="15px"> home applience</li></a>
                     <a></a>
                 </ul>
-
-                
             </div>
         </aside>
 
         <main>
             
             <div class="sear">
-                <input type="text" placeholder="Search...">
+                
                 <a href="#">
-                    <span class="material-icons-sharp">
-                        search
-                    </span>
+                    <input type="text" placeholder="Search...">
+                    <button type="submit" class="bouu"><img src="{% static "/img/sharp_search_black_18dp.png" %}" alt=""></button>
                 </a>
             </div>
            <!--cars-->
            
-            <a href="cars.html"><div class="h1" style="padding-top: 10px;"><h1>Cars</h1></div></a>
+            <a href="#"><div class="h1" style="padding-top: 40px;"><h1>Categories</h1></div></a>
             <section class="sec2">
                 
-                <div class="blo-1">
-                    <a href="it.html"  rel="golf7">
-                        <img src="../img/s.jpg" width="100%">
+                <div class="blo-2">
+                    <a href="cars.html"  rel="golf7">
+                        <img src="{% static "/img/21647_m.jpg" %}" width="90%">
                         <br>
-                        <h2 style="text-align: center;">Hatchback</h2>
-                        
                     </a>
-                    
+                    <h2 style="text-align: center; ">Cars</h2>
                 </div>
-                <div class="blo-1">
-                       <a href="it1.html"><img src="../img/bm.jpg" width="110%" >
+                
+                <div class="blo-2">
+                       <a href="it1.html"><img src="{% static "/img/mac.png" %}" width="100%" >
                         <br>
-                        <h2 style="text-align: center;">Sedan</h2>
-                        
                     </a>
+                    <h2 style="text-align: center; ">Électroménagers</h2>
                 </div>
-                <div class="blo-1">
-                        <a href="it2.html"><img src="../img/su.jpg" width="100%" >
+                
+                <div class="blo-2">
+                        <a href="it2.html"><img src="{% static "/img/05_Watcheseng.png" %}" width="100%" >
                         <br>
-                        <h2 style="text-align: center;">Suv</h2>
-                        
                     </a>
+                    <h2>parts & Accesories</h2>
                 </div>
+                
+                <div class="blo-2">
+                    <a href="it4.html">
+                    <img src="{% static "/img/p.webp" %}" width="100%">
+                        <br>
+                    </a>
+                    <h2>Laptop & hones</h2>
+                </div>
+                
             </section>
             <br>
             <section class="sec2">
-                <div class="blo-1">
-                    <a href="it4.html">
-                    <img src="../img/sp.webp" width="100%">
-                        <br>
-                        <h2 style="text-align: center;">Sport</h2>
-                        
-                    </a>
-                </div>
-                <div class="blo-1">
+                
+                <div class="blo-2">
                     <a href="it5.html">
-                        <img src="../img/m3.webp" width="140%" >
+                        <img src="{% static "/img/shoes.png" %}" width="100%" >
                         <br>
-                        <h2 style="text-align: center;">wagon</h2>
                         
                     </a>
+                    <h2>Shoes</h2>
                 </div>
-                <div class="blo-1">
+                
+                <div class="blo-2">
                     <a href="it6.html">
-                        <img src="../img/cou.jpg" width="140%" >
+                        <img src="{% static "/img/d6.jpg" %}" width="100%" >
                         <br>
-                        <h2 style="text-align: center;">Coupe</h2>
-                        
                     </a>
+                    <h2>Houses</h2>
                 </div>
-            </section>
-            <section class="sec2">
-                <div class="blo-1">
-                    <a href="it4.html">
-                    <img src="../img/van.png" width="100%">
-                        <br>
-                        <h2 style="text-align: center;">Van</h2>
-                        
-                    </a>
-                </div>
-                <div class="blo-1">
-                    <a href="it5.html">
-                        <img src="../img/tru.png" width="100%" >
-                        <br>
-                        <h2 style="text-align: center;">Truck</h2>
-                        
-                    </a>
-                </div>
-                <div class="blo-1">
-                    <a href="it6.html">
-                        <img src="../img/ram.png" width="100%" >
-
-                        <br>
-                        <h2 style="text-align: center;">4x4</h2>
-                        
-                    </a>
-                </div>
+                
             </section>
             <br>
             
@@ -179,7 +150,7 @@
                 </div>
                 <div class="prof">
                     <a href="#"><div class="profi">
-                        <img src="../img/pro.webp" >
+                        <img src="{% static "/img/pro.webp" %}" >
                     </div></a>
                 </div>
 
@@ -188,7 +159,7 @@
 
             <div class="user-prof">
                 <div class="logo">
-                    <img src="../img/LO.png">
+                    <img src="{% static "/img/LO.png" %}">
                     <h2>BuyBay</h2>
                     <h3>Discover, Bid, Buy - Your Way to Great Deals at BuyBay!</h3>
                 </div>
@@ -201,6 +172,18 @@
 
 
     
+    </div>
+    <div class="Social">
+        <div class="header1">
+            <h2>Social Media </h2>
+            <br>
+                <a href="https://www.instagram.com/habib__mustapha/"><i class="fa fa-instagram" style="font-size:36px"></i></a>
+                <a href="https://web.facebook.com/habib.mustapha.9210"><i class="fa fa-facebook" style="font-size:36px"></i></a>
+                <a href="https://twitter.com/Habib49485244"><i class="fa fa-twitter" style="font-size:36px"></i></a>
+                <a href="https://github.com/Habib1258"><i class="fa fa-github" style="font-size:36px"></i></a>
+        </div>
+        
+        
     </div>
     <div style="margin-bottom: 200px;"></div>
 

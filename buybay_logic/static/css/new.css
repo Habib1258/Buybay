@@ -3,6 +3,7 @@
 :root{
     --color-primary: #6C9BCF;
     --color-danger: #FF0060;
+    --color-hover: #CC0040;
     --color-success: #0C1232;
     --color-warning: #F7D060;
     --color-white: #fff;
@@ -227,7 +228,7 @@ input[type="file"] {
 }
 
 input[type="submit"] {
-    background-color: var(--color-primary);
+    background-color: var(--color-danger);
     color: var(--color-dark);
     border: none;
     padding: 10px 20px;
@@ -237,7 +238,7 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-    background-color: var(--color-danger);
+    background-color: var(--color-hover);
 }
 
 
@@ -616,7 +617,7 @@ img.img{
 
 
 .dropbtn {
-    background-color: var(--color-primary);
+    background-color: var(--color-danger);
     color: var(--color-dark);
     border-radius: var(--border-radius-1);
     width: 100%;
@@ -627,7 +628,8 @@ img.img{
   }
   
   .dropbtn:hover {
-    background-color: var(--color-danger);
+    background-color: var(--color-hover);
+    color: var(--color-white);
   }
   
   

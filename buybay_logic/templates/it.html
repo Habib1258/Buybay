@@ -61,39 +61,42 @@
         <main>
             
             <div class="sear">
-                <input type="text" placeholder="Search...">
+                
                 <a href="#">
-                    <span class="material-icons-sharp">
-                        search
-                    </span>
+                    <input type="text" placeholder="Search...">
+                    <button type="submit" class="bouu"><img src="{% static "/img/sharp_search_black_18dp.png" %}" alt=""></button>
                 </a>
             </div>
            <!--cars-->
             <br>
            
             <div class="conte">
-                <a href="cars.html"><button class="ret">
-                    <span class="material-icons-sharp">
-                        keyboard_return
+                <a href="cars.html">
+                    <button class="ret">
+                        <span class="material-icons-sharp">
+                            keyboard_return
                         </span>
-                </button></a><br>
+                    </button>
+                </a>
+                <br>
                 <br>
                 <div class="blo-1">
                         <h1 style="text-decoration: underline;">VW golf 7 </h1>
                         
                             <br>
-                            
-                        <div class="inf1">
-                            <img src="{% static "/img/golf.jpg" %}" class="image" >
-                            <img src="{% static "/img/golf1.jpg" %}" class="image">
-                            <img src="{% static "/img/golf2.jpg" %}" class="image">
-                            <img src="{% static "/img/golf3.jpg" %}" class="image">
-                            <br>
-                        </div>
-                            <div class="butt">
-                                <button id="ne"><</button>
-                                <button id="ne">></button><br><br>
+                        <div class="slider">    
+                            <div class="slides">
+                                <img src="{% static "/img/golf.jpg" %}"  >
+                                <img src="{% static "/img/golf1.jpg" %}" >
+                                <img src="{% static "/img/golf2.jpg" %}" >
+                                <img src="{% static "/img/golf3.jpg" %}" >
+                                <br>
                             </div>
+                            <div class="button">
+                                <button class="pr" onclick="moveSlide(-1)"><</button>
+                                <button class="ne" onclick="moveSlide(1)">></button><br><br>
+                            </div>
+                        </div>
                             <h2 style="text-decoration: underline;">Prix : <span class="danger">290 M</span></h2><br>
                             <h3><span class="cara">  - Marque :</span> VW</h3><br>
                             <h3><span class="cara">  - Annee :</span> 2019</h3><br>
@@ -103,9 +106,7 @@
                             <h2 style="text-decoration: underline;">Description : </h2><br>
                             <h3>Tres belle voiture machiya 200000km </h3>
                             <div class="like-container">
-                                <div class="like-cnt unchecked" id="like-cnt">
-                                <i class="like-btn material-icons">thumb_up</i>
-                              </div>
+                                
                             </div>
                             <br>
                 </div>
@@ -128,7 +129,7 @@
                             <div class="co"><span class="ico">
                                 <i class="fa fa-map-marker"></i>
                             </span><h2>localisation : Tiaret</h2><br></div>
-                            <input class="txt" type="text" placeholder="messege" style="padding: 10px; border-radius:10px;">
+                            
                           
                 </div>
             </div>
@@ -137,10 +138,10 @@
                 <div class="header">
                     <h2>Social Media </h2>
                     <br>
-                        <a href="https://www.instagram.com/habib__mustapha/"><i class="fa fa-instagram" style="font-size:36px"></i></a>
-                        <a href="https://web.facebook.com/habib.mustapha.9210"><i class="fa fa-facebook" style="font-size:36px"></i></a>
-                        <a href="https://twitter.com/Habib49485244"><i class="fa fa-twitter" style="font-size:36px"></i></a>
-                        <a href="https://github.com/Habib1258"><i class="fa fa-github" style="font-size:36px"></i></a>
+                        <a href="https://www.instagram.com/habib__mustapha/"><i class="fa fa-instagram" id="icon" style="font-size:36px"></i></a>
+                        <a href="https://web.facebook.com/habib.mustapha.9210"><i class="fa fa-facebook" id="icon" style="font-size:36px"></i></a>
+                        <a href="https://twitter.com/Habib49485244"><i class="fa fa-twitter" id="icon" style="font-size:36px"></i></a>
+                        <a href="https://github.com/Habib1258"><i class="fa fa-github" id="icon" style="font-size:36px"></i></a>
                 </div>
                 
                 
