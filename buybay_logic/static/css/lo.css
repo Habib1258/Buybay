@@ -2,7 +2,8 @@
 
 :root{
     --color-primary: #6C9BCF;
-    --color-danger: #FF0060;
+    --color-danger: #FFD700;
+    --color-hover: #FFBF00;
     --color-success: #0C1232;
     --color-warning: #F7D060;
     --color-white: #fff;

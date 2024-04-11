@@ -11,14 +11,15 @@
     <link rel="icon" ico href="{% static "img/LO.png" %}">
     {% load static %}
     <link rel="stylesheet" href="{% static "css/new.css" %}">
+    
+    
 </head>
 <body>
-    
     <div class="container">
         <aside>
             <div class="toggle">
                 <div class="logo">
-                    <img src="{% static "img/LO.png" %}">
+                    <img src="{% static "/img/LO.png"  %}">
                 </div>
             </div>
 
@@ -29,19 +30,19 @@
                         </span>
                     <h3>Homepage</h3>
                 </a>
-                <a href="profil.html">
+                <a href="prof.html" class="active">
                     <span class="material-icons-sharp">
                         account_circle
                         </span>
                     <h3>Profil</h3>
                 </a>
                 
-
+                
                 <a href="categorie.html">
-                    <span class="material-icons-sharp" >
+                    <span class="material-icons-sharp">
                         category
                     </span>
-                    <h3>Categories</h3><br>
+                    <h3>Categorie</h3>
                 </a>
                 <ul class="lis">
                     <a href="cars.html" id="a1"><li><img src="{% static "/img/icons8-car-50 (1).png" %}" width="15px"> Cars</li></a> 
@@ -56,44 +57,60 @@
         </aside>
 
         <main>
+            <div class="sear">
+                
+                <a href="#">
+                    <input type="text" placeholder="Search...">
+                    <button type="submit" class="bouu"><img src="{% static "/img/sharp_search_black_18dp.png" %}" alt=""></button>
+                </a>
+            </div>
             
-            <section class="sec4">
-                <div class="blo-4">
-                    <h2>Sell Your Item</h2>
-                        
+           <section class="blo-5">
+                <h2>
+                    <h1 class="de">About BuyBay</h1>
+Welcome to BuyBay, your ultimate destination for online shopping and selling!
 
-                        <div class="drop-zone" id="drop-zone">
-                            <p>Drag & Drop your images here</p>
-                            <span for="up" class="material-icons-sharp">
-                                cloud_upload
-                            </span>
-                            <input type="file" class="up" id="file-input" value="" multiple>
-                            
-                            
-                        </div>
-                        <div class="preview-container" id="preview-container"></div>
-                        
-                        <label class="lab" for="category">Select Category:</label>
-                        <select id="category" onchange="showForm()">
-                            <option value="none">Categories</option>
-                            <option value="car">Car</option>
-                            <option value="houses">Houses </option>
-                            <option value="laptop & phone">Laptop & Phone </option>
-                            <option value="clothing">clothing </option>
-                            <option value="Accessories">Accessories </option>
-                            <option value="home appliance">Home Appliance </option>
-                            <option value="spare part">spare part </option>
-                          </select>
-                          
-        
-                          <div id="form-container" class="form-container"></div>
-                        
-                        
-                </div>
-            </section>
+At BuyBay, we strive to provide a seamless and secure platform where buyers and sellers 
+from around the world come together to discover unique items, shop for their favorite brands, 
+and turn their unwanted goods into cash.
+<br>
+<h1 class="de">Our Mission</h1>
+Our mission at BuyBay is to empower individuals and businesses to connect,
+ trade, and thrive in a global marketplace. We are committed to creating an inclusive environment where everyone 
+ can find what they need and sell what they don't.
+<br>
+<h1 class="de">How BuyBay Works</h1>
+BuyBay operates as a dynamic marketplace, offering a vast array of products 
+across various categories such as electronics, fashion, home goods, collectibles, and more.
+ Whether you're searching for the latest gadgets, vintage treasures, or everyday essentials, BuyBay has you covered.
+<br>
+<h1 class="de">Buying on BuyBay</h1>
+As a buyer, you'll enjoy the convenience of browsing through millions of listings,
+ exploring detailed product descriptions, and comparing prices from different sellers.
+  With our secure payment options and buyer protection policies, you can shop with confidence, 
+  knowing that your transactions are safe and your purchases are backed by our guarantee.
+<br>
+<h1 class="de">Selling on BuyBay</h1>
+Are you looking to declutter your space or start your own business? 
+Selling on BuyBay is easy and rewarding. List your items for sale, set your price,
+ and reach millions of potential buyers worldwide. Our seller tools and resources are designed to help you manage your listings,
+  track your sales, and grow your business with ease.
+<br>
+<h1 class="de">Our Commitment to Trust and Safety</h1>
+At BuyBay, trust and safety are our top priorities.
+ We employ advanced security measures and robust fraud detection systems to protect our community members
+  and their transactions. We continuously monitor our platform to ensure compliance with our policies and guidelines, 
+  fostering a transparent and trustworthy trading environment for all.
+<br>
+<h1 class="de">Get Started with BuyBay Today!</h1>
+Join the millions of buyers and sellers who are already part of the BuyBay community. 
+Whether you're looking to shop, sell, or simply explore, BuyBay is here to make your online shopping experience enjoyable and rewarding.
+<br>
+Thank you for choosing BuyBay, where every transaction is an opportunity to discover, connect, and grow.
+                </h2>
+           </section>
             
         </main>
-        
         <!-- end main content--> 
         <div class="cont">
             <div class="nav">
@@ -102,13 +119,7 @@
                         add_circle_outline
                     </span>
                 </div></a>
-                <a href="lo.html">
-                    <span class="material-icons-sharp">
-                        login
-                    </span>
-                    <h3>login</h3>
-                </a>
-                <div class="dark-mode" onclick="toggleDarkMode()">
+                <div class="dark-mode">
                     <span class="material-icons-sharp active">
                         light_mode
                     </span>
@@ -118,22 +129,18 @@
                 </div>
                 <div class="prof">
                     <a href="profil.html"><div class="profi">
-                        <img src="{% static "/img/pro.webp" %}" >
+                        <img src="{% static "/img/pro.webp" %}" style="width: 80%;">
                     </div></a>
                 </div>
 
                 
             </div>
 
-            <div class="user-prof">
-
-                <div class="logo">
-                    <img src="{% static "/img/LO.png" %}" style="width: 70%;">
-                    <h2>BuyBay</h2>
-                    <h3>Discover, Bid, Buy - Your Way to Great Deals at BuyBay!</h3>
-                </div>
-            </div>
-            <br>
+            
+                    
+                    
+                
+            
             
         </div>
 
@@ -142,9 +149,8 @@
 
     
     </div>
-
     <div class="Social">
-        <div class="header">
+        <div class="header1">
             <h2>Social Media </h2>
             <br>
                 <a href="https://www.instagram.com/habib__mustapha/"><i class="fa fa-instagram" style="font-size:36px"></i></a>
@@ -157,9 +163,8 @@
     </div>
     <div style="margin-bottom: 200px;"></div>
 
-        <script src="{% static "/JS/index.js" %}"></script>
-        <script src="{% static "/JS/script.js" %}"></script>
-       
+    <script src="{% static "/JS/index.js" %}"></script>
+       <!-- <script src="/JS/light.js"></script>-->
 
     
 
@@ -167,7 +172,6 @@
 
     
     
-
 
 </body>
 </html>

@@ -2,7 +2,8 @@
 
 :root{
     --color-primary: #6C9BCF;
-    --color-danger: #FF0060;
+    --color-danger: #FFD700;
+    --color-hover: #FFBF00;
     --color-success: #48f542;
     --color-red:#de1d0b;
     --color-warning: #F7D060;
@@ -586,7 +587,7 @@ aside .sidebar .messeges{
     display: flex;
   }
   
-  .slides img {
+  .slides .img {
     width: 100%;
     height: auto;
     border-radius: var(--border-radius-2);
@@ -612,3 +613,9 @@ aside .sidebar .messeges{
     right: 0;
   }
   
+
+  .images{
+    width: 700px;
+    height: 500px;
+    border-radius: var(--border-radius-2);
+  }

@@ -48,36 +48,32 @@
 
 
                 <div class="fil">
-                    <div class="dropdown">
-                        <button onclick="myFun()" class="drop-btn">Model</button>
-                        <div id="myDropdown" class="dropdown-content">
-                          <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFun()">
-                          <a href="#Volkswagen" class="az">Volkswagen</a>
-                          <a href="#Audi" class="az">Audi</a>
-                          <a href="#Seat" class="az">Seat</a>
-                          <a href="#Mercedes" class="az">Mercedes</a>
-                          <a href="#BMW" class="az">BMW</a>
-                          <a href="#Dacia" class="az">Dacia</a><br>
-                          <a href="#Renault" class="az">Renault</a><br>
-                          <a href="#Nissan" class="az">Nissan</a><br>
-                          <a href="#Mitsubishi" class="az">Mitsubishi</a><br>
-                        </div>
-                      </div><br><br><br>
+                    
+                      <select id="category" onchange="showForm()">
+                        <option value="none">Brand</option>
+                        <option value="Volkswagen">Volkswagen</option>
+                        <option value="Audi">Audi </option>
+                        <option value="BMW">BMW </option>
+                        <option value="Mercedes">Mercedes </option>
+                        <option value="Seat">Seat </option>
+                        <option value="Dacia">Dacia </option>
+                        <option value="Renault">Renault </option>
+                        <option value="Mitsubishi">Mitsubishi </option>
+                      </select><br><br><br>
 
-                    <div class="dropdown">
-                        <button onclick="myFunction()" class="drop-btn">Type</button>
-                        <div id="myDropdown1" class="dropdown-content">
-                          <input type="text" placeholder="Search.." id="myInput1" onkeyup="filterFunction()">
-                          <a href="#Coupe" class="az">Coupe</a>
-                          <a href="#wagon" class="az">wagon</a>
-                          <a href="#Van" class="az">Van</a>
-                          <a href="#Truck" class="az">Truck</a>
-                          <a href="#4x4" class="az">4x4</a>
-                          <a href="#Sport" class="az">Sport</a><br>
-                          <a href="#Suv" class="az">Suv</a><br>
-                          <a href="#Sedan" class="az">Sedan</a><br>
-                        </div>
-                      </div><br><br>
+                      <select id="category" onchange="showForm()">
+                        <option value="none">Type</option>
+                        <option value="Coupe">Coupe</option>
+                        <option value="wagon">wagon </option>
+                        <option value="Sport">Sport </option>
+                        <option value="Van">Van </option>
+                        <option value="4x4">4x4 </option>
+                        <option value="Suv">Suv </option>
+                        <option value="Sedan">Sedan </option>
+                        <option value="Mitsubishi">Mitsubishi </option>
+                      </select><br><br><br><br>
+
+
                     <h3 class="filtre">Moteur :</h3><br>
                     <input type="checkbox" id="1.0 - 1.5" name="1.0 - 1.5" value="1.0 - 1.5">
                     <label for="1.0 - 1.5"> 1.0 - 1.5</label><br>
@@ -104,10 +100,10 @@
                     <input type="checkbox" id="Diesel" name=" Diesel" value=" Diesel">
                     <label for="Diesel">  Diesel</label><br><br><br>
                     
-                    <button type="submit"  class="butt1">
+                    <button type="submit"  class="but1">
                         <span class="material-icons-sharp">
                             tune
-                            </span> <h3 class="h12">Filtre</h3></button>
+                        </span> <h3 class="h12">Filtre</h3></button>
                 </div>
 
                 
@@ -218,7 +214,7 @@
                     </span>
                 </div>
                 <div class="prof">
-                    <a href="#"><div class="profi">
+                    <a href="profil.html"><div class="profi">
                         <img src="{% static "/img/pro.webp" %}" >
                     </div></a>
                 </div>

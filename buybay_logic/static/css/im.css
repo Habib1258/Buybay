@@ -2,7 +2,8 @@
 
 :root{
     --color-primary: #6C9BCF;
-    --color-danger: #FF0060;
+    --color-danger: #FFD700;
+    --color-hover: #FFBF00;
     --color-success: #0C1232;
     --color-warning: #F7D060;
     --color-white: #fff;
@@ -368,6 +369,35 @@ aside .sidebar .messeges{
     border-radius: var(--border-radius-2);
 }
 
+.but1 {
+    border-radius: var(--border-radius-1);
+    border-color: var(--color-danger);
+    background-color: var(--color-white);
+    color: var(--color-dark);
+    width: 65%;
+    margin-top: 25px;
+    margin-bottom: 5px;
+    margin-right:5px;
+    padding: 5px;
+    font-size: large;
+    cursor: pointer;
+    float: left;
+}
+
+.fil input{
+    border: none;
+    text-align: center;
+}
+
+.but1 .h12 {
+    color: var(--color-dark);
+    padding: 5px;
+    padding-left: 30px;
+    font-size: large;
+    cursor: pointer;
+    float: left;
+}
+
 .sec2 {
     display: flex;
 }
@@ -528,3 +558,32 @@ main .content{
 }
 
 
+.header{
+    position: absolute;
+    top: 800px;
+    left: 570px;
+}
+
+.header1{
+    position: absolute;
+    top: 750px;
+    left: 700px;
+}
+
+.header2{
+    position: absolute;
+    top: 1000px;
+    left: 570px;
+}
+
+.header3{
+    position: absolute;
+    top: 1000px;
+    left: 650px;
+}
+
+.header4{
+    position: absolute;
+    top: 960px;
+    left: 650px;
+}

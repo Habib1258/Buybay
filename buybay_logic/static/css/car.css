@@ -2,7 +2,8 @@
 
 :root{
     --color-primary: #6C9BCF;
-    --color-danger: #FF0060;
+    --color-danger: #FFD700;
+    --color-hover: #FFBF00;
     --color-red :#de1d0b;
     --color-success: #48f542;
     --color-warning: #F7D060;
@@ -343,14 +344,24 @@ aside .sidebar .messeges{
 }
 
 .but1 {
-    border-radius: var(--border-radius-2);
-    border-color: var(--color-dark);
+    border-radius: var(--border-radius-1);
+    border-color: var(--color-danger);
+    background-color: var(--color-white);
     color: var(--color-dark);
-    width: 35%;
+    width: 65%;
     margin-top: 25px;
     margin-bottom: 5px;
     margin-right:5px;
     padding: 5px;
+    font-size: large;
+    cursor: pointer;
+    float: left;
+}
+
+.but1 .h12 {
+    color: var(--color-dark);
+    padding: 5px;
+    padding-left: 30px;
     font-size: large;
     cursor: pointer;
     float: left;
@@ -369,14 +380,10 @@ aside .sidebar .messeges{
     transition: all 0.3s ease;
 }
 
-
-.blo-1{
-	color: #fff;
-	margin-top: 50px;
-    gap: 2rem;
-    padding: 20px;
-    box-sizing: border-box;
+.blo-1:hover{
+    box-shadow: none;
 }
+
 
 .blo-1 h2{
     position: relative;
@@ -423,6 +430,56 @@ aside .sidebar .messeges{
     gap: 2rem;
     padding: 0px;
     box-sizing: border-box;
+}
+
+.sec3{
+    display: flex;
+}
+
+.sec3 .blo-3{
+    position: relative;
+	margin-left: 80px;
+    background-color: var(--color-white);
+    padding: var(--card-padding);
+    border-radius: var(--border-radius-3);
+    margin-top: 50px;
+    box-shadow: var(--box-shadow);
+    width: 200px;
+    height: 200;
+    gap: 2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+
+.blo-3{
+	color:var(--color-dark);
+	margin-top: 80px;
+    margin-bottom: 50px;
+    gap: 2rem;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.blo-3 img{
+    position: absolute;
+    top: 0px;
+    justify-self: center;
+    right: 0px;
+    border-radius: var(--border-radius-3);
+    width: 200px;
+    height: 200px;
+}
+
+.blo-3 h2{
+    position: absolute;
+    top: 230px;
+    justify-self: center;
+    text-align: center;
+    right: 0;
+    border-radius: var(--border-radius-3);
+    width: 200px;
+    height: 200px;
 }
 
 .lis {
@@ -672,7 +729,36 @@ main .content{
     left: 570px;
 }
 
+.header3{
+    position: absolute;
+    top: 1000px;
+    left: 650px;
+}
 
+#category{
+    text-align: center;
+    background-color: var(--color-danger);
+    width: 70%;
+    padding: 5px;
+    padding: 6px;
+    font-size: 16px;
+    border-radius: var(--border-radius-1);
+    border: none;
+    cursor: pointer;
+    color: var(--color-dark);
+}
+
+#category option{
+    text-align: center;
+    background-color: var(--color-white);
+    padding: 5px;
+    padding: 6px;
+    font-size: 16px;
+    border-radius: var(--border-radius-1);
+    border: none;
+    cursor: pointer;
+    color: var(--color-dark);
+}
 
 .add{
     cursor: pointer;

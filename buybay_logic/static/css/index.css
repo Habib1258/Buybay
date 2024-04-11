@@ -2,7 +2,8 @@
 
 :root{
     --color-primary: #6C9BCF;
-    --color-danger: #FF0060;
+    --color-danger: #FFD700;
+    --color-hover: #FFBF00;
     --color-success: #0C1232;
     --color-warning: #F7D060;
     --color-white: #fff;
@@ -414,15 +415,14 @@ aside .sidebar a:hover span{
 
 .sear input{
     position: relative;
+    
     padding: 7px;
     width: 25em;
     border: none;
     box-shadow: var(--box-shadow);
     text-align: left;
     display: inline-table;
-    border-radius: var(--border-radius-2);
-    
-    
+    border-radius: var(--border-radius-2); 
 }
 
 .bouu {

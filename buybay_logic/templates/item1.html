@@ -50,7 +50,7 @@
                     <a href="im.html" id="a1"><li><img src="{% static "/img/icons8-home-50.png" %}" width="15px"> Houses</li></a>
                     <a href="pie.html" id="a1"><li><img src="{% static "/img/icons8-watch-64.png" %}" width="15px"> Accesories</li></a>
                     <a href="cars.html" id="a1"><li><img src="{% static "/img/icons8-laptop-50 (1).png" %}" width="15px"> Laptop & Phones</li></a> 
-                    <a href="pie.html" id="a1"><li><img src="{% static "/img/icons8-shoes-64 (2).png" %}" width="15px"> shoes</li></a>
+                    <a href="pie.html" id="a1"><li><img src="{% static "/img/icons8-jacket-50.png" %}" width="15px"> Clothing</li></a>
                     <a href="cars.html" id="a1"><li ><img src="{% static "/img/icons8-washing-machine-24 (1).png" %}" width="15px"> home applience</li></a>
                     <a></a>
                 </ul>
@@ -80,18 +80,18 @@
                 <div class="blo1">
                         <h1 style="text-decoration: underline;">Maison F6</h1>
                             <br>
-                            
-                        <div class="inf1">
-                            
-                            <img src="{% static "/img/d1.jpg" %}" class="image" >
-                            <img src="{% static "/img/d11.jpg" %}" class="image">
-                            <img src="{% static "/img/d12.jpg" %}" class="image">
-                            <img src="{% static "/img/d13.jpg" %}" class="image">
-                            <br>
-                        </div>
-                            <div class="butt">
-                                <button id="ne"><</button>
-                                <button id="ne">></button><br><br>
+                            <div class="slider">    
+                                <div class="slides">
+                                    <img src="{% static "/img/d1.jpg" %}" class="images" >
+                                    <img src="{% static "/img/d11.jpg" %}" class="images" >
+                                    <img src="{% static "/img/d12.jpg" %}" class="images" >
+                                    <img src="{% static "/img/d13.jpg" %}" class="images" >
+                                    <br>
+                                </div>
+                                <div class="button">
+                                    <button class="pr" onclick="moveSlide(-1)"><</button>
+                                    <button class="ne" onclick="moveSlide(1)">></button><br><br>
+                                </div>
                             </div>
                             <h2 style="text-decoration: underline;">Prix : <span class="danger">7 milliards</span></h2><br>
                             <h3><span class="cara">  - Localisation :</span>Résidences les platanes</h3><br>
@@ -128,8 +128,7 @@
                             <div class="co"><span class="ico">
                                 <i class="fa fa-map-marker"></i>
                             </span><h2>localisation : Tiaret</h2><br></div>
-                            <input class="txt" type="text" placeholder="messege" style="padding: 10px; border-radius:10px;">
-                            <button class="but" type="submit">Send</button>
+                            
                 </div>
             </div>
             <br>
@@ -149,7 +148,7 @@
         <!-- end main content--> 
         <div class="cont">
             <div class="nav">
-                <a href="#"><div class="add">
+                <a href="new.html"><div class="add">
                     <span class="material-icons-sharp">
                         add_circle_outline
                     </span>
@@ -169,7 +168,7 @@
                     </span>
                 </div>
                 <div class="prof">
-                    <a href="#"><div class="profi">
+                    <a href="profil.html"><div class="profi">
                         <img src="{% static "/img/pro.webp" %}" style="width: 20px">
                     </div></a>
                 </div>

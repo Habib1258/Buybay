@@ -2,8 +2,8 @@
 
 :root{
     --color-primary: #6C9BCF;
-    --color-danger: #FF0060;
-    --color-hover: #CC0040;
+    --color-danger: #FFD700;
+    --color-hover: #FFBF00;
     --color-success: #0C1232;
     --color-warning: #F7D060;
     --color-white: #fff;
@@ -82,10 +82,12 @@ h1{
     font-size: 1.8rem;
 }
 
-
+.de{
+    text-align: center  ;
+}
 h2{
-    font-weight: 600;
-    font-size: 1.4rem;
+    font-weight: 900;
+    font-size: 24px;
 }
 
 
@@ -152,15 +154,25 @@ a{
     transition: all 0.3s ease;
 }
 
-.blo4{
-	color:var(--color-dark);
-	margin-top: 180px;
-    margin-bottom: 50px;
-    gap: 2rem;
-    padding: 0px;
 
-    box-sizing: border-box;
+
+.blo-5{
+    display: grid;
+	margin-left: 20px;
+    margin-top: 40px;
+    margin-right: 20px;
+    
+    padding: var(--card-padding);
+    border-radius: var(--border-radius-2);
+    
+    width: 100%;
+    height: auto;
+    gap: 2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
+
+
 
 .drop-zone {
     border: 2px dashed #ccc;
@@ -234,6 +246,7 @@ input[type="submit"] {
     padding: 10px 20px;
     cursor: pointer;
     border-radius: 4px;
+    font-size: 16px;
     transition: background-color 0.3s ease;
 }
 
@@ -381,7 +394,7 @@ aside .sidebar a:hover span{
     text-align: left;
     display: inline-table;
     border-radius: var(--border-radius-2);
-    
+    margin-top: 20px;
     
 }
 
@@ -433,6 +446,7 @@ main .content{
 
 .cont{
     margin-top: 1.4rem;
+    height: 20px;
 }
 
 .cont .nav{
@@ -568,6 +582,7 @@ img.img{
     text-align: center;
 }
 
+
 .ico{
     float: left;
     padding-top: 5px;
@@ -614,7 +629,55 @@ img.img{
     cursor: pointer;
 }
 
+#category{
+    text-align: center;
+    background-color: var(--color-danger);
+    padding: 5px;
+    padding: 6px;
+    font-size: 16px;
+    border-radius: var(--border-radius-1);
+    border: none;
+    cursor: pointer;
+    color: var(--color-dark);
+}
 
+#category option{
+    text-align: center;
+    background-color: var(--color-white);
+    padding: 5px;
+    padding: 6px;
+    font-size: 16px;
+    border-radius: var(--border-radius-1);
+    border: none;
+    cursor: pointer;
+    color: var(--color-dark);
+} 
+
+#form-container{
+    display: block;
+    flex-direction: column;
+    gap: 10px;
+    
+}
+
+.in{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.lab{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    font-weight: bolder;
+}
+
+.sub{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+}
 
 .dropbtn {
     background-color: var(--color-danger);
@@ -627,9 +690,9 @@ img.img{
     cursor: pointer;
   }
   
-  .dropbtn:hover {
+  #category:hover {
     background-color: var(--color-hover);
-    color: var(--color-white);
+    color: var(--color-danger);
   }
   
   

@@ -21,5 +21,6 @@ urlpatterns = [
     path('cat_car.html',views.car_cat, name="car_cat"),
     path('model.html',views.model, name="model"),
     path('new.html',views.new, name="new"),
+    path('ab.html',views.about, name="about"),
 ]
 

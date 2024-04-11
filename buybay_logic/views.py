@@ -52,3 +52,6 @@ def mod1(request):
 
 def new(request):
     return render(request,'new.html')
+
+def about(request):
+    return render(request,'ab.html')

@@ -19,7 +19,7 @@
         <aside>
             <div class="toggle">
                 <div class="logo">
-                    <img src="../img/LO.png">
+                    <img src="{% static "/img/LO.png" %}">
                 </div>
             </div>
 
@@ -38,16 +38,13 @@
                     <h3>Profil</h3>
                 </a>
                 
-                <a href="#">
+                <a href="categorie.html">
                     <span class="material-icons-sharp">
                         category
                     </span>
                     <h3>Categorie</h3>
                 </a>
-                <ul class="lis">
-                    <a href="im.html" id="a1" class="active1"><li><img src="../img/icons8-home-50.png" width="15px"> Houses</li></a>
-                    <a></a>
-                </ul><br>
+                <br><br><br>
 
                 <div class="fil">
                     <h3 class="filtre">Type :</h3><br>
@@ -55,6 +52,8 @@
                     <label for="Villa"> villa</label><br>
                     <input type="checkbox" id="Appartement" name="Appartement" value="Appartement">
                     <label for="Appartement"> Appartement</label><br><br>
+                    <h3 class="filtre">Area :</h3><br>
+                    <input type="number" id="annee" min="1" max="100" placeholder="M²"><br><br>
                     <h3 class="filtre">Façade :</h3><br>
                     <input type="checkbox" id="1" name="1" value="1">
                     <label for="1"> 1</label><br>
@@ -75,10 +74,11 @@
                     <label for="F4"> F4</label><br>
                     <input type="checkbox" id="F4" name="4" value="4">
                     <label for="F5"> F5</label><br><br>
-                    <button type="submit"  class="butt">
+                    <button type="submit"  class="but1">
                         <span class="material-icons-sharp">
                             tune
-                            </span> <h3>Filtre</h3></button>
+                        </span>
+                        <h3 class="h12">Filtre</h3></button>
                 </div>
 
             </div>
@@ -100,7 +100,7 @@
                 
             <div class="blo-1">
                 <a href="item1.html"  rel="golf7">
-                    <img src="../img/d1.jpg" width="100%">
+                    <img src="{% static "/img/d1.jpg" %}" width="100%">
                     <br>
                     <h1>Maison F7</h1>
                     <h3>tres belle maison </h3>
@@ -110,7 +110,7 @@
                 
             </div>
             <div class="blo-1">
-                    <img src="../img/d2.jpg" width="100%" >
+                    <img src="{% static "/img/d2.jpg" %}" width="100%" >
                     <br>
                     <h1>Maison F5</h1>
                     <h3>spacieuse et dans un qarties calme </h3>
@@ -119,7 +119,7 @@
                 
             </div>
             <div class="blo-1">
-                    <img src="../img/d3.jpg" width="100%" >
+                    <img src="{% static "/img/d3.jpg" %}" width="100%" >
                     <br>
                     <h1>Maison f4</h1>
                     <h3>tres belle maison </h3>
@@ -131,7 +131,7 @@
                 
             <div class="blo-1">
                 <a href="item.html"  rel="golf7">
-                    <img src="../img/d4.jpg" width="100%">
+                    <img src="{% static "/img/d4.jpg" %}" width="100%">
                     <br>
                     <h1>Villa F4</h1>
                     <h3>tres belle villa </h3>
@@ -141,7 +141,7 @@
                 
             </div>
             <div class="blo-1">
-                    <img src="../img/d5.jpg" width="100%" >
+                    <img src="{% static "/img/d5.jpg" %}" width="100%" >
                     <br>
                     <h1>villa F6</h1>
                     <h3>tres belle Maison </h3>
@@ -150,7 +150,7 @@
                 
             </div>
             <div class="blo-1">
-                    <img src="../img/d6.jpg" width="100%" >
+                    <img src="{% static "/img/d6.jpg" %}" width="100%" >
                     <br>
                     <h1>Maison F3</h1>
                     <h3>tres belle Maison </h3>
@@ -160,7 +160,7 @@
         </section>
             <br>
             <div class="Social">
-                <div class="header">
+                <div class="header4">
                     <h2>Social Media </h2>
                     <br>
                         <a href="https://www.instagram.com/habib__mustapha/"><i class="fa fa-instagram" style="font-size:36px"></i></a>
@@ -175,7 +175,7 @@
         <!-- end main content--> 
         <div class="cont">
             <div class="nav">
-                <a href="#"><div class="add">
+                <a href="new.html"><div class="add">
                     <span class="material-icons-sharp">
                         add_circle_outline
                     </span>
@@ -195,8 +195,8 @@
                     </span>
                 </div>
                 <div class="prof">
-                    <a href="#"><div class="profile-pho">
-                        <img src="../img/pro.webp" style="width: 30px; border-radius: 50%;">
+                    <a href="profil.html"><div class="profi">
+                        <img src="{% static "/img/pro.webp" %}">
                     </div></a>
                 </div>
 
@@ -205,7 +205,7 @@
 
             <div class="user-prof">
                 <div class="logo">
-                    <img src="../img/LO.png">
+                    <img src="{% static "/img/LO.png" %}">
                     <h2>BuyBay</h2>
                     <h3>Discover, Bid, Buy - Your Way to Great Deals at BuyBay!</h3>
                 </div>
