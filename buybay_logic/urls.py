@@ -1,5 +1,6 @@
 from django.urls import path
 from . import views
+from .views import insert
 
 
 
@@ -22,5 +23,10 @@ urlpatterns = [
     path('model.html',views.model, name="model"),
     path('new.html',views.new, name="new"),
     path('ab.html',views.about, name="about"),
+    path('lap.html',views.laptop, name="laptop"),
+    path('acc.html',views.accessories, name="accessories"),
+    path('insert/', views.insert, name='insert'),
+
+
 ]
 

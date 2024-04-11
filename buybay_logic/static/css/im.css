@@ -91,18 +91,21 @@ body{
 h1{
     font-weight: 800;
     font-size: 1.8rem;
+    color: var(--color-dark);
 }
 
 
 h2{
     font-weight: 600;
     font-size: 1.4rem;
+    color: var(--color-dark);
 }
 
 
 h3{
     font-weight: 400;
     font-size: 0.87rem;
+    color: var(--color-dark);
 }
 
 
@@ -125,6 +128,15 @@ b{
 a{
     text-decoration: none;
     color: var(--color-dark);
+}
+
+.bouu {
+    position: absolute;
+    top: 28px;
+    left: 810px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
 }
 
 aside .sidebar .a1 {
@@ -515,7 +527,17 @@ main .content{
     
 }
 
+.header4 h2{
+    color: var(--color-dark);
+}
 
+.sidebar .fil h3{
+    color: var(--color-dark);
+}
+
+.sidebar .fil label{
+    color: var(--color-dark);
+}
 
 .cont .user-prof{
     display: flex;

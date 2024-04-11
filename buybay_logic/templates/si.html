@@ -12,28 +12,27 @@
 </head>
 
 <body>
-
+    
+        
     <div class="container1">
         <div class="logo">
             <img src="{% static "img/LO.png" %}" width="210" height="100" class=" ">
             <h1 style="padding: 10px; text-decoration: underline;">Sign Up</h1>
         </div>
 
-        <div class="ma">
-
+        <form class="ma" method="POST" action="">
+            {% csrf_token %}
                 
                     <label for="" class="label">First-Name</label>
                     <div class="in">
-                        <input class="inpu" type="text" name="First-Name" placeholder="First-Name" required>
+                        <input class="inpu" type="text" name="first_name" placeholder="First-Name" required>
                         <span class="ico">
                             <i class="fa fa-user"></i>
                         </span>
                     </div>
-
-                
                     <label for="" class="label">Name</label>
                     <div class="in">
-                        <input class="inpu" type="text" name="Name" placeholder="Name" required>
+                        <input class="inpu" type="text" name="name" placeholder="Name" required>
                         <span class="ico">
                             <i class="fa fa-user"></i>
                         </span>
@@ -49,7 +48,7 @@
                 
                     <label for="" class="label">E-mail</label>
                     <div class="in">
-                        <input class="inpu" type="mail" name="mail" placeholder="E-mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
+                        <input class="inpu" type="mail" name="email" placeholder="E-mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
                         <span class="ico">
                             <i class="fa fa-envelope"></i>
                         </span>
@@ -59,18 +58,18 @@
                 
                     <label for="" class="label">password</label>
                     <div class="in">
-                        <input class="inpu" type="password" name="mdp" placeholder="Password" required>
+                        <input class="inpu" type="password" name="password" placeholder="Password" required>
                         <span class="ico">
                             <i class="fa fa-lock"></i>
                         </span>
                     </div>
                 
-
-                    <a href="index.html"><button class="but" type="submit" value=""><h2 style="font-size: large;">SIGN UP</h2> </button></a>
+                    
+                    <button class="but" type="submit"><h2 style="font-size: large;">SIGN UP</h2> </button>
                     
                 
                 <p class="p">If you have an acount, <a href="lo.html" style="color: blue;"> Log in here!</a></p>
-        </div>
+                </form>
     </div>
     <div style="margin-bottom: 200px;"></div>
 </body>

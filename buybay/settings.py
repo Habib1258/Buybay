@@ -49,6 +49,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    
 ]
 
 ROOT_URLCONF = 'buybay.urls'
@@ -75,13 +76,16 @@ WSGI_APPLICATION = 'buybay.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'buybay',
-        'USER':'postgres',
-        'PASSWORD':'admin',
-        'HOST':'localhost',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'buybay', 
+        'USER': 'root',
+        'PASSWORD': 'habib',
+        'HOST': 'localhost', 
+        'PORT': '3306', 
     }
 }
 

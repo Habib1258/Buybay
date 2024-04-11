@@ -438,14 +438,14 @@ aside .sidebar .messeges{
 
 .sec3 .blo-3{
     position: relative;
-	margin-left: 80px;
+	margin-left: 50px;
     background-color: var(--color-white);
     padding: var(--card-padding);
     border-radius: var(--border-radius-3);
     margin-top: 50px;
     box-shadow: var(--box-shadow);
-    width: 200px;
-    height: 200;
+    width: 150px;
+    height: 150px;
     gap: 2rem;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -467,19 +467,19 @@ aside .sidebar .messeges{
     justify-self: center;
     right: 0px;
     border-radius: var(--border-radius-3);
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
 }
 
 .blo-3 h2{
     position: absolute;
-    top: 230px;
+    top: 180px;
     justify-self: center;
     text-align: center;
     right: 0;
     border-radius: var(--border-radius-3);
-    width: 200px;
-    height: 200px;
+    width: 150;
+    height: 150;
 }
 
 .lis {
@@ -558,7 +558,7 @@ aside .sidebar a.active1::before{
     border-radius: 15px;
 }
 
-.filtre {
+.filter {
     font-weight: bold;
     padding-left: 0px;
     margin-left: 20px;
@@ -758,6 +758,61 @@ main .content{
     border: none;
     cursor: pointer;
     color: var(--color-dark);
+}
+
+#category1{
+    text-align: center;
+    background-color: var(--color-danger);
+    width: 70%;
+    padding: 5px;
+    padding: 6px;
+    font-size: 16px;
+    border-radius: var(--border-radius-1);
+    border: none;
+    cursor: pointer;
+    color: var(--color-dark);
+}
+
+#category1 option{
+    text-align: center;
+    background-color: var(--color-white);
+    padding: 5px;
+    padding: 6px;
+    font-size: 16px;
+    border-radius: var(--border-radius-1);
+    border: none;
+    cursor: pointer;
+    color: var(--color-dark);
+}
+
+#form-container{
+    display: block;
+    flex-direction: column;
+    gap: 10px;
+    
+}
+
+.in{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 70%;
+    padding: 5px;
+    border-radius: var(--border-radius-1);
+}
+
+.lab{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    font-weight: bolder;
+    
+
+}
+
+.sub{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
 }
 
 .add{

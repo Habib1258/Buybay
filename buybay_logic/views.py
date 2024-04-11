@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from django.core.paginator import Paginator
+from .models import User
+from django.shortcuts import render, redirect
 
 # Create your views here.
 
@@ -55,3 +56,22 @@ def new(request):
 
 def about(request):
     return render(request,'ab.html')
+
+def laptop(request):
+    return render(request,'lap.html')
+
+def accessories(request):
+    return render(request,'acc.html')
+
+
+
+def insert(request):
+    if request.method == 'POST':
+        first_name = request.POST.get('first_name')
+        name = request.POST.get('name')
+        phone = request.POST.get('phone')
+        email = request.POST.get('email')
+        password = request.POST.get('password')
+        cli=User( nom=first_name, prenom=name, num_telephone=phone, email=email, password=password)
+        cli.save() 
+    return render(request, 'index.html',{})

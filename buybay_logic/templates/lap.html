@@ -1,0 +1,183 @@
+{% load static %}
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <title>BuyBay</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp"
+    rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" ico href="{% static "img/LO.png" %}">
+    {% load static %}
+    <link rel="stylesheet" href="{% static "css/car.css" %}">
+    
+    
+</head>
+<body>
+    <div class="container">
+        <aside>
+            <div class="toggle">
+                <div class="logo">
+                    <img src="{% static "/img/LO.png" %}">
+                </div>
+            </div>
+
+
+            <div class="sidebar">
+                <a href="index.html" >
+                    <span class="material-icons-sharp">
+                        home
+                        </span>
+                    <h3>Homepage</h3>
+                </a>
+                <a href="profil.html">
+                    <span class="material-icons-sharp">
+                        account_circle
+                        </span>
+                    <h3>Profil</h3>
+                </a>
+                
+                <a href="categorie.html">
+                    <span class="material-icons-sharp">
+                        category
+                    </span>
+                    <h3>Categorie</h3>
+                </a>
+
+
+                <div class="fil">
+                    <select id="category1" onchange="showFilter()">
+                        <option value="none">Type</option>
+                        <option value="Phone">Phone</option>
+                        <option value="Laptop">Laptop </option>
+                        <option value="Tablet">Tablet </option>
+                        <option value="Smart watch">Smart watch </option>
+                      </select><br><br>
+
+                      <div id="form-container" class="form-container"></div>
+                    
+                    <button type="submit"  class="but1">
+                        <span class="material-icons-sharp">
+                            tune
+                    </span> <h3 class="h12">Filtre</h3></button>
+                </div>
+
+                
+            </div>
+        </aside>
+
+        <main>
+           
+            <div class="sear">
+                
+                <a href="#">
+                    <input type="text" placeholder="Search...">
+                    <button type="submit" class="bouu"><img src="{% static "/img/sharp_search_black_18dp.png" %}" alt=""></button>
+                </a>
+            </div>
+           <!--cars--><br><br>
+           
+            <a href="cars.html"><div class="h1" style="padding-top: 10px;"><h1>Laptop & Phones</h1></div></a>
+            <section class="sec2">
+                
+                <div class="blo-1">
+                    <a href="it.html" >
+                        <img src="{% static "/img/lap.webp" %}" width="100%">
+                        <br>
+                        <h1>Asus laptop</h1>
+                        <h3>Azuz Rog i9 13900K  </h3>
+                        <br>
+                        <h2>Prix : <span class="danger">29 M</span></h2>
+                    </a>
+                    
+                </div>
+                <div class="blo-1">
+                       <a href="it1.html"><img src="{% static "/img/pho.jpeg" %}" width="100%" >
+                        <br>
+                        <h1>iphone 14 pro</h1>
+                        <h3>Battery 87%</h3>
+                        <br>
+                        <h2>Prix : <span class="danger">16 M</span></h2>
+                    </a>
+                </div>
+                
+            <br>
+            <div class="Social">
+                <div class="header3">
+                    <h2>Social Media </h2>
+                    <br>
+                        <a href="https://www.instagram.com/habib__mustapha/"><i class="fa fa-instagram" style="font-size:36px"></i></a>
+                        <a href="https://web.facebook.com/habib.mustapha.9210"><i class="fa fa-facebook" style="font-size:36px"></i></a>
+                        <a href="https://twitter.com/Habib49485244"><i class="fa fa-twitter" style="font-size:36px"></i></a>
+                        <a href="https://github.com/Habib1258"><i class="fa fa-github" style="font-size:36px"></i></a>
+                </div>
+                
+                
+            </div>
+        
+            
+        </main>
+        <!-- end main content--> 
+        <div class="cont">
+            <div class="nav">
+                <a href="new.html"><div class="add">
+                    <span class="material-icons-sharp">
+                        add_circle_outline
+                    </span>
+                </div></a>
+                <a href="lo.html">
+                    <span class="material-icons-sharp">
+                        login
+                    </span>
+                    <h3>login</h3>
+                </a>
+                <div class="dark-mode">
+                    <span class="material-icons-sharp active">
+                        light_mode
+                    </span>
+                    <span class="material-icons-sharp">
+                        dark_mode
+                    </span>
+                </div>
+                <div class="prof">
+                    <a href="profil.html"><div class="profi">
+                        <img src="{% static "/img/pro.webp" %}" >
+                    </div></a>
+                </div>
+
+                
+            </div>
+
+            <div class="user-prof">
+                <div class="logo">
+                    <img src="{% static "/img/LO.png" %}">
+                    <h2>BuyBay</h2>
+                    <h3>Discover, Bid, Buy - Your Way to Great Deals at BuyBay!</h3>
+                </div>
+            </div>
+            <br>
+            
+        </div>
+
+
+
+
+        
+    </div>
+    
+    <div style="margin-bottom: 200px;"></div>
+
+    <script src="{% static "/JS/index.js" %}"></script>
+    <script src="{% static "/JS/script.js" %}"></script>
+        
+
+    
+
+    
+
+    
+    
+
+</body>
+</html>
