@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import User
+from .models import  Client
 from django.shortcuts import render, redirect
 
 # Create your views here.
@@ -31,7 +31,16 @@ def car_cat(request):
     return render(request,'car_cat.html')
 
 def sign(request):
-    return render(request,'si.html')
+        if request.method == 'POST':
+            first_name = request.POST.get('first_name')
+            name = request.POST.get('name')
+            num_telephone = request.POST.get('num_telephone')
+            email = request.POST.get('email')
+            password = request.POST.get('password')
+            cli=Client(nom=first_name, prenom=name, num_telephone=num_telephone, email=email, password=password)
+            cli.save()
+            return redirect('index.html')
+        return render(request,'si.html')
 
 def mod(request):
     return render(request,'mod.html')
@@ -65,13 +74,6 @@ def accessories(request):
 
 
 
-def insert(request):
-    if request.method == 'POST':
-        first_name = request.POST.get('first_name')
-        name = request.POST.get('name')
-        phone = request.POST.get('phone')
-        email = request.POST.get('email')
-        password = request.POST.get('password')
-        cli=User( nom=first_name, prenom=name, num_telephone=phone, email=email, password=password)
-        cli.save() 
-    return render(request, 'index.html',{})
+
+
+
