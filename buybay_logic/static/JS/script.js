@@ -57,18 +57,23 @@ function showForm() {
       case "car":
         formContainer.innerHTML = `
         <form>
-            <label for="model" class="lab" >Model:</label><br/>
-            <input type="text" id="model" class="in" name="Model"><br/>
-            <label for="finition" class="lab">finition:</label><br/>
-            <input type="text" id="finition" class="in" name="finition"><br/>
-            <label for="year" class="lab">year:</label><br/>
-            <input type="text" id="year" class="in" name="year"><br/>
-            <label for="engine" class="lab">engine:</label><br/>
-            <input type="text" id="engine" class="in" name="engine"><br/>
-            <label for="mileage" class="lab"> mileage:</label><br/>
-            <input type="text" id="mileage" class="in" name="mileage"><br/>
-            <label for="type" class="lab">type:</label><br/>
-            <input type="text" id="type" class="in" name="type"><br/>
+            <label for="Model" class="lab" >Model:</label><br/>
+            <input type="text" id="Model" class="in" name="Model"><br/>
+            <label for="Finition" class="lab">Finition:</label><br/>
+            <input type="text" id="Finition" class="in" name="Finition"><br/>
+            <h3 class="lab">Fuel :</h3><br>
+            <input type="checkbox" id="Petrol" name="Petrol" value="Petrol">
+            <label for="Petrol" class="lab" style="padding-right:30px"> Petrol</label>
+            <input type="checkbox" id="Diesel" name="Diesel" value="Diesel">
+            <label for="Diesel" class="lab"> Diesel</label><br><br><br>
+            <label for="Year" class="lab">Year:</label><br/>
+            <input type="text" id="Year" class="in" name="Year"><br/>
+            <label for="Engine" class="lab">Engine:</label><br/>
+            <input type="text" id="Engine" class="in" name="Engine"><br/>
+            <label for="Mileage" class="lab"> Mileage:</label><br/>
+            <input type="text" id="Mileage" class="in" name="Mileage"><br/>
+            <label for="Type" class="lab">Type:</label><br/>
+            <input type="text" id="Type" class="in" name="Type"><br/>
             <label for="Description" class="lab">Description:</label>
             <input type="text" id="Description" class="in" name="Description">
             <label for="Price" class="lab">Price:</label>
@@ -107,12 +112,12 @@ function showForm() {
             <input type="text" id="Brand" class="in" name="Brand"><br/>
             <label for="Model" class="lab">Model:</label><br/>
             <input type="text" id="Model" class="in" name="Model"><br/>
-            <label for="ROM" class="lab">ROM:</label><br/>
-            <input type="text" id="ROM" class="in" name="ROM"><br/>
-            <label for="RAM" class="lab">RAM:</label><br/>
-            <input type="text" id="RAM" class="in" name="RAM"><br/>
             <label for="Processor" class="lab"> Processor:</label><br/>
             <input type="text" id="Processor" class="in" name="Processor"><br/>
+            <label for="RAM" class="lab">RAM:</label><br/>
+            <input type="text" id="RAM" class="in" name="RAM"><br/>
+            <label for="ROM" class="lab">ROM:</label><br/>
+            <input type="text" id="ROM" class="in" name="ROM"><br/>
             <label for="Display" class="lab"> Display:</label><br/>
             <input type="text" id="Display" class="in" name="Display"><br/>
             <label for="Graphic Card" class="lab"> Graphic Card:</label><br/>
@@ -446,3 +451,4 @@ function showForm() {
       formContainer.style.display = "none";
     }
   }
+

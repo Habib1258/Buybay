@@ -2,6 +2,7 @@ from django.shortcuts import render
 from .models import  Client
 from django.shortcuts import render, redirect
 
+
 # Create your views here.
 
 def index(request):
@@ -45,6 +46,7 @@ def sign(request):
 def mod(request):
     return render(request,'mod.html')
 
+
 def model(request):
     return render(request,'model.html')
 
@@ -71,9 +73,4 @@ def laptop(request):
 
 def accessories(request):
     return render(request,'acc.html')
-
-
-
-
-
 

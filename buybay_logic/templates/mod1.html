@@ -1,208 +1,54 @@
 {% load static %}
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    
-    <meta name="viewport" content="width=device-width, initial-scale=0.5">
-    <title>BuyBay</title>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp"
-    rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="icon" ico href="{% static "img/LO.png" %}">
-    {% load static %}
-    <link rel="stylesheet" href="{% static "css/item.css" %}">
-    
-    
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="{% static "css/mod.css" %}">
+<title>BuyBay Moderator Panel</title>
+
 </head>
 <body>
-    <div class="container">
-        <aside>
-            <div class="toggle">
-                <div class="logo">
-                    <img src="../img/LO.png">
-                </div>
-            </div>
 
+<header>
+    <h1>BuyBay Moderator Panel</h1>
+</header>
 
-            <div class="sidebar">
-                <a href="index.html" class="active">
-                    <span class="material-icons-sharp">
-                        home
-                        </span>
-                    <h3>Homepage</h3>
-                </a>
-                <a href="prof.html">
-                    <span class="material-icons-sharp">
-                        account_circle
-                        </span>
-                    <h3>Profil</h3>
-                </a>
-                
-                <a href="lo.html">
-                    <span class="material-icons-sharp">
-                        login
-                    </span>
-                    <h3>login</h3>
-                </a>
-                <a href="#">
-                    <span class="material-icons-sharp">
-                        mail_outline 
-                    </span>
-                    <h3>Contact</h3>
-                </a>
-                <a href="#">
-                    <span class="material-icons-sharp">
-                        category
-                    </span>
-                    <h3>Categorie</h3>
-                </a>
-                
-
-                <a href="#">
-                    <span class="material-icons-sharp">
-                        logout
-                    </span>
-                    <h3>Log out</h3>
-                </a>
-            </div>
-        </aside>
-
-        <main>
-            
-            <div class="sear">
-                <input type="text" placeholder="Search...">
-                <a href="#">
-                    <span class="material-icons-sharp">
-                        search
-                    </span>
-                </a>
-            </div>
-           <!--cars-->
-            <br>
-           
-            <div class="conte">
-                <a href="mod.html"><button class="ret">
-                    <span class="material-icons-sharp">
-                        keyboard_return
-                        </span>
-                </button></a><br>
-                <br>
-                <div class="blo-1">
-                        <h1 style="text-decoration: underline;">VW golf 7 </h1>
-                            <br>
-                            
-                        <div class="inf1">
-                            <img src="../img/golf.jpg" class="image" >
-                            <img src="../img/golf1.jpg" class="image">
-                            <img src="../img/golf2.jpg" class="image">
-                            <img src="../img/golf3.jpg" class="image">
-                            <br>
-                            
-                        </div>
-                        <div class="butt">
-                            <button class="ne"><</button>
-                            <button class="ne">></button><br><br>
-                        </div>
-                            <h2 style="text-decoration: underline;">Prix : <span class="danger">290 M</span></h2><br>
-                            <h3><span class="cara">  - Marque :</span> VW</h3><br>
-                            <h3><span class="cara">  - Annee :</span> 2019</h3><br>
-                            <h3><span class="cara">  - Moteur :</span> 2.0 TSI</h3><br>
-                            <h3><span class="cara">  - Energie :</span> Essence</h3><br>
-                            <h3><span class="cara">  - Kilometrage:</span> 204.453KM</h3><br>
-                            <h2 style="text-decoration: underline;">Description : </h2><br>
-                            <h3>Tres belle voiture machiya 200000km  </h3>
-                            <button type="submit" class="button2">Delete</button>
-                            <button type="submit" class="button1">Accept</button>
-                            <br><br><br>
-                </div>
-                
-            </div>  
-            
-            <br>    
-            <div class="conte">
-                <div class="blo1">
-                        <h1 style="text-decoration: underline;">Contact : </h1>
-                            <br>
-                            <div class="co"><span class="ico">
-                                <i class="fa fa-user"></i>
-                            </span><h2>Name : Abdesselem</h2><br></div>
-                            <div class="co"><span class="ico">
-                                <i class="fa fa-phone"></i>
-                            </span><h2>Phone :  <span class="po"> 0549573583</span></h2><br></div>
-                            <div class="co"><span class="ico">
-                                <i class="fa fa-envelope"></i>
-                            </span><h2>E-mail : <span class="em">habib054mustapha@gmail.com</span><br></div>
-                            <div class="co"><span class="ico">
-                                <i class="fa fa-map-marker"></i>
-                            </span><h2>localisation : Tiaret</h2><br></div>
-
-                </div>
-            </div>
-            <br>
-            <div class="Social">
-                <div class="header">
-                    <h2>Social Media </h2>
-                    <br>
-                        <a href="https://www.instagram.com/habib__mustapha/"><i class="fa fa-instagram" style="font-size:36px"></i></a>
-                        <a href="https://web.facebook.com/habib.mustapha.9210"><i class="fa fa-facebook" style="font-size:36px"></i></a>
-                        <a href="https://twitter.com/Habib49485244"><i class="fa fa-twitter" style="font-size:36px"></i></a>
-                        <a href="https://github.com/Habib1258"><i class="fa fa-github" style="font-size:36px"></i></a>
-                </div>
-                
-                
-            </div>
-        </main>
-        <!-- end main content--> 
-        <div class="cont">
-            <div class="nav">
-                <a href="#"><div class="add">
-                    <span class="material-icons-sharp">
-                        add_circle_outline
-                    </span>
-                </div></a>
-                <div class="dark-mode">
-                    <span class="material-icons-sharp active">
-                        light_mode
-                    </span>
-                    <span class="material-icons-sharp">
-                        dark_mode
-                    </span>
-                </div>
-                <div class="prof">
-                    <a href="#"><div class="profi">
-                        <img src="../img/pro.webp" style="width: 20px">
-                    </div></a>
-                </div>
-
-                
-            </div>
-
-            <div class="user-prof">
-                <div class="logo">
-                    <img src="../img/LO.png">
-                    <h2>BuyBay</h2>
-                    <h3>Discover, Bid, Buy - Your Way to Great Deals at BuyBay!</h3>
-                </div>
-            </div>
-            <br>
-            
-        </div>
-
-
-
-
-    
-    </div>
-    <div style="margin-bottom: 200px;"></div>
-
-    <script src="{% static "/JS/index.js" %}"></script>
-
-    
-
-    
-
-    
-    
+<div class="container">
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Id_client</th>
+                <th>Image</th>
+                <th>Product Name</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>243</td>
+                <td>Image</td>
+                <td>Product 1</td>
+                <td class="des">{% lorem 1 b random %}</td>
+                <td>$20</td>
+                <td><button class="btn">Approve</button> <button class="btn">Delete</button></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>432</td>
+                <td>Image2</td>
+                <td>Product 2</td>
+                <td class="des">cv</td>
+                <td>$270</td>
+                <td><button class="btn">Approve</button> <button class="btn">Delete</button></td>
+            </tr>
+            <!-- Add more rows for additional products -->
+        </tbody>
+    </table>
+</div>
 
 </body>
 </html>
