@@ -28,6 +28,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+MEDIA_ROOT = '/buybay_logic/media'
+MEDIA_URL = '/media/'
+
 
 # Application definition
 

@@ -57,27 +57,24 @@ function showForm() {
       case "car":
         formContainer.innerHTML = `
         <form>
+            <label for="brand" class="lab">brand:</label><br/>
+            <input type="text" id="brand" class="in" name="brand" required><br/>
             <label for="Model" class="lab" >Model:</label><br/>
-            <input type="text" id="Model" class="in" name="Model"><br/>
+            <input type="text" id="Model" class="in" name="Model" required><br/>
             <label for="Finition" class="lab">Finition:</label><br/>
             <input type="text" id="Finition" class="in" name="Finition"><br/>
-            <h3 class="lab">Fuel :</h3><br>
-            <input type="checkbox" id="Petrol" name="Petrol" value="Petrol">
-            <label for="Petrol" class="lab" style="padding-right:30px"> Petrol</label>
-            <input type="checkbox" id="Diesel" name="Diesel" value="Diesel">
-            <label for="Diesel" class="lab"> Diesel</label><br><br><br>
+            <label for="fuel" class="lab">fuel:</label><br/>
+            <input type="text" id="fuel" class="in" name="fuel" required><br/>
             <label for="Year" class="lab">Year:</label><br/>
-            <input type="text" id="Year" class="in" name="Year"><br/>
+            <input type="text" id="Year" class="in" name="Year" required><br/>
             <label for="Engine" class="lab">Engine:</label><br/>
-            <input type="text" id="Engine" class="in" name="Engine"><br/>
+            <input type="text" id="Engine" class="in" name="Engine" required><br/>
             <label for="Mileage" class="lab"> Mileage:</label><br/>
-            <input type="text" id="Mileage" class="in" name="Mileage"><br/>
-            <label for="Type" class="lab">Type:</label><br/>
-            <input type="text" id="Type" class="in" name="Type"><br/>
+            <input type="text" id="Mileage" class="in" name="Mileage" required><br/>
             <label for="Description" class="lab">Description:</label>
-            <input type="text" id="Description" class="in" name="Description">
+            <input type="text" id="Description" class="in" name="Description" required>
             <label for="Price" class="lab">Price:</label>
-            <input type="text" id="Price" class="in" name="Price">
+            <input type="text" id="Price" class="in" name="Price" required>
             <input type="submit" class="sub" value="Submit">
         </form>
         `;

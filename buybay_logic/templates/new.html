@@ -59,38 +59,40 @@
         <main>
             
             <section class="sec4">
-                <div class="blo-4">
-                    <h2>Sell Your Item</h2>
-                        
+                <form class="blo-4" method="POST" action="">
+                    {% csrf_token %}
+                        <h2>Sell Your Item</h2>
+                            
 
-                        <div class="drop-zone" id="drop-zone">
-                            <p>Drag & Drop your images here</p>
-                            <span for="up" class="material-icons-sharp">
-                                cloud_upload
-                            </span>
-                            <input type="file" class="up" id="file-input" value="" multiple>
+                            <div class="drop-zone" id="drop-zone">
+                                <p>Drag & Drop your images here</p>
+                                <span class="material-icons-sharp">
+                                    cloud_upload
+                                </span>
+                                <input type="file" class="up" id="file-input" name="image" value="" multiple>
+                                
+                                
+                            </div>
+                            <div class="preview-container" id="preview-container"></div>
                             
+                            <label class="lab" for="category">Select Category:</label>
+                            <select id="category" onchange="showForm()">
+                                <option value="none">Categories</option>
+                                <option value="car">Car</option>
+                                <option value="houses">Houses </option>
+                                <option value="laptop & phone">Laptop & Phone </option>
+                                <option value="clothing">clothing </option>
+                                <option value="Accessories">Accessories </option>
+                                <option value="home appliance">Home Appliance </option>
+                                <option value="spare part">spare parts </option>
+                            </select>
                             
-                        </div>
-                        <div class="preview-container" id="preview-container"></div>
+            
+                            <div id="form-container" class="form-container">
+                                
+                            </div>
                         
-                        <label class="lab" for="category">Select Category:</label>
-                        <select id="category" onchange="showForm()">
-                            <option value="none">Categories</option>
-                            <option value="car">Car</option>
-                            <option value="houses">Houses </option>
-                            <option value="laptop & phone">Laptop & Phone </option>
-                            <option value="clothing">clothing </option>
-                            <option value="Accessories">Accessories </option>
-                            <option value="home appliance">Home Appliance </option>
-                            <option value="spare part">spare parts </option>
-                          </select>
-                          
-        
-                          <div id="form-container" class="form-container"></div>
-                        
-                        
-                </div>
+                        </form>
             </section>
             
         </main>

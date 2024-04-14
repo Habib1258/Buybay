@@ -35,21 +35,25 @@ class Car(models.Model):
     id = models.BigAutoField(primary_key=True)
     brand = models.CharField(max_length=100)
     model = models.CharField(max_length=100)
-    category = models.CharField(max_length=20, choices=category_choices)
+    mileage = models.CharField(max_length=1000000)
+    category = models.CharField(max_length=20, null=False)
     year = models.IntegerField()
-    finition = models.CharField(max_length=50,)
-    engine = models.CharField(max_length=10, validators=[RegexValidator(r'^[0-9a-zA-Z]*$', 'Only alphanumeric characters are allowed.')])
+    finition = models.CharField(max_length=50)
+    engine = models.CharField(max_length=10)
     fuel = models.CharField(max_length=10)
-    price = models.DecimalField(max_digits=10, decimal_places=2)
+    price = models.CharField(max_length=10000)
     des = models.CharField(max_length=1000)
-    image = models.ImageField(upload_to='car_images/')
-    id_client = models.ForeignKey(Client, on_delete=models.CASCADE)
+    image = models.BinaryField()
+    id_client = models.ForeignKey('Client', on_delete=models.CASCADE)
 
-    def __str__(self):
-        return f"{self.brand} {self.model} ({self.year})"
+    class Meta:
+        managed = False
+        db_table = 'buybay_logic_car'
+
+def __str__(self):
+    return f"{self.brand} {self.model} ({self.year})"
     
 
-    from django.db import models
 
 class Accessory(models.Model):
     id = models.BigAutoField(primary_key=True)
@@ -62,11 +66,13 @@ class Accessory(models.Model):
     image = models.ImageField(upload_to='car_images/')
     id_client = models.ForeignKey(Client, on_delete=models.CASCADE)
 
+    class Meta:
+        managed = False
+        db_table = 'buybay_logic_accessory'
+
     def __str__(self):
         return f"{self.brand} {self.model}"
 
-
-from django.db import models
 
 class spar_parts(models.Model):
     id = models.BigAutoField(primary_key=True)
@@ -79,11 +85,12 @@ class spar_parts(models.Model):
     image = models.ImageField(upload_to='car_images/')
     id_client = models.ForeignKey(Client, on_delete=models.CASCADE)
 
+    class Meta:
+        managed = False
+        db_table = 'buybay_logic_spar_parts'
+
     def __str__(self):
         return f"{self.brand} {self.model}"
-
-
-from django.db import models
 
 class Home_appliance(models.Model):
     id = models.BigAutoField(primary_key=True)
@@ -96,11 +103,13 @@ class Home_appliance(models.Model):
     image = models.ImageField(upload_to='car_images/')
     id_client = models.ForeignKey(Client, on_delete=models.CASCADE)
 
+    class Meta:
+        managed = False
+        db_table = 'buybay_logic_Home_appliance'
+
     def __str__(self):
         return f"{self.brand} {self.model}"
 
-
-from django.db import models
 
 class clothing(models.Model):
     id = models.BigAutoField(primary_key=True)
@@ -113,6 +122,10 @@ class clothing(models.Model):
     price = models.DecimalField(max_digits=10, decimal_places=2)
     image = models.ImageField(upload_to='car_images/')
     id_client = models.ForeignKey(Client, on_delete=models.CASCADE)
+
+    class Meta:
+        managed = False
+        db_table = 'buybay_logic_clothing'
 
     def __str__(self):
         return f"{self.brand} {self.model}"
@@ -133,10 +146,14 @@ class laptop_phone(models.Model):
     image = models.ImageField(upload_to='car_images/')
     id_client = models.ForeignKey(Client, on_delete=models.CASCADE)
 
+    class Meta:
+        managed = False
+        db_table = 'buybay_logic_laptop_phone'
+
     def __str__(self):
         return f"{self.brand} {self.model}"
     
-class house(models.Model):
+class House(models.Model):
     id = models.BigAutoField(primary_key=True)
     location = models.CharField(max_length=100,validators=[RegexValidator(r'^[0-9a-zA-Z]*$', 'Only alphanumeric characters are allowed.')])
     Type = models.CharField(max_length=100)
@@ -149,3 +166,7 @@ class house(models.Model):
     price = models.DecimalField(max_digits=10, decimal_places=2)
     image = models.ImageField(upload_to='car_images/')
     id_client = models.ForeignKey(Client, on_delete=models.CASCADE)
+
+    class Meta:
+        managed = False
+        db_table = 'buybay_logic_house'

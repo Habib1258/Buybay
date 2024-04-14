@@ -1,6 +1,10 @@
 from django.shortcuts import render
 from .models import  Client
 from django.shortcuts import render, redirect
+from .models import Car,House,Home_appliance,spar_parts,clothing,laptop_phone,Accessory
+from buybay_logic.models import House
+
+
 
 
 # Create your views here.
@@ -62,8 +66,61 @@ def login(request):
 def mod1(request):
     return render(request,'mod1.html')
 
+
+
+category_choices = [
+        ('car', 'Car'),
+        ('houses', 'Houses'),
+        ('laptop_phone', 'Laptop & Phone'),
+        ('clothing', 'Clothing'),
+        ('accessories', 'Accessories'),
+        ('home_appliance', 'Home Appliance'),
+        ('spare_parts', 'Spare Parts'),
+    ]
+        
+
 def new(request):
+    category = category_choices
+    category = request.POST.get('category')
+    if category == 'car':
+        if request.method == 'POST':
+            category = request.POST.get('category')
+            brand = request.POST.get('brand')
+            model = request.POST.get('Model')  
+            year = request.POST.get('Year')
+            engine = request.POST.get('Engine')
+            mileage = request.POST.get('Mileage')
+            des = request.POST.get('Description')
+            finition = request.POST.get('Finition')
+            fuel = request.POST.get('fuel')
+            image = request.FILES.get('image') 
+            price = request.POST.get('Price')
+            car = Car(
+                brand=brand, model=model, year=year, category=category, engine=engine,
+                mileage=mileage, des=des, finition=finition, price=price, image=image, fuel=fuel
+            )
+            car.save()
+            return redirect('index.html')  
+    elif category == 'houses': 
+         if request.method == 'POST':
+            category = request.POST.get('category')
+            type = request.POST.get('type')
+            location = request.POST.get('location')  
+            floor = request.POST.get('floor')
+            rooms = request.POST.get('rooms')
+            area = request.POST.get('area')
+            description = request.POST.get('Description')
+            facade = request.POST.get('facade')
+            image = request.FILES.get('image') 
+            price = request.POST.get('Price')
+            house = House(
+                type=type, location=location, floor=floor, rooms=rooms, area=area,
+                facade=facade, des=description, price=price, image=image,
+            )
+            house.save()
+            return redirect('index.html')
     return render(request,'new.html')
+
 
 def about(request):
     return render(request,'ab.html')
