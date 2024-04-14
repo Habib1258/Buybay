@@ -43,7 +43,7 @@ class Car(models.Model):
     fuel = models.CharField(max_length=10)
     price = models.CharField(max_length=10000)
     des = models.CharField(max_length=1000)
-    image = models.BinaryField()
+    image = models.ImageField(upload_to='images/')
     id_client = models.ForeignKey('Client', on_delete=models.CASCADE)
 
     class Meta:
@@ -153,20 +153,25 @@ class laptop_phone(models.Model):
     def __str__(self):
         return f"{self.brand} {self.model}"
     
+
+
 class House(models.Model):
     id = models.BigAutoField(primary_key=True)
-    location = models.CharField(max_length=100,validators=[RegexValidator(r'^[0-9a-zA-Z]*$', 'Only alphanumeric characters are allowed.')])
-    Type = models.CharField(max_length=100)
-    category = models.CharField(max_length=20, choices=category_choices)
+    location = models.CharField(max_length=100)
+    Type = models.CharField(db_column='Type', max_length=100)  
+    category = models.CharField(max_length=20)
     area = models.CharField(max_length=100)
     facade = models.IntegerField()
     rooms = models.IntegerField()
     floor = models.IntegerField()
     description = models.TextField()
     price = models.DecimalField(max_digits=10, decimal_places=2)
-    image = models.ImageField(upload_to='car_images/')
-    id_client = models.ForeignKey(Client, on_delete=models.CASCADE)
+    image = models.CharField(max_length=100)
+    id_client = models.ForeignKey('Client', on_delete=models.CASCADE)
 
     class Meta:
         managed = False
         db_table = 'buybay_logic_house'
+
+    def __str__(self):
+        return f"{self.type} {self.location} {self.category} "

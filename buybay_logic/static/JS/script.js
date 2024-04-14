@@ -84,8 +84,8 @@ function showForm() {
           <form>
             <label for="Type" class="lab">Type:</label>
             <input type="text" id="Type" class="in" name="Type">
-            <label for="Location" class="lab">Location:</label>
-            <input type="text" id="Location" class="in" name="Location">
+            <label for="location" class="lab">location:</label>
+            <input type="text" id="location" class="in" name="location">
             <label for="Facade" class="lab">Facade:</label>
             <input type="text" id="Facade" class="in" name="Facade">
             <label for="Area" class="lab">Area:</label>

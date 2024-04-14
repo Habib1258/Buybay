@@ -59,23 +59,18 @@
         <main>
             
             <section class="sec4">
-                <form class="blo-4" method="POST" action="">
+                <form class="blo-4" method="POST" action="" enctype="multipart/form-data">
                     {% csrf_token %}
-                        <h2>Sell Your Item</h2>
-                            
-
-                            <div class="drop-zone" id="drop-zone">
-                                <p>Drag & Drop your images here</p>
-                                <span class="material-icons-sharp">
-                                    cloud_upload
-                                </span>
-                                <input type="file" class="up" id="file-input" name="image" value="" multiple>
-                                
-                                
-                            </div>
-                            <div class="preview-container" id="preview-container"></div>
-                            
-                            <label class="lab" for="category">Select Category:</label>
+                    <h2>Sell Your Item</h2>
+                    
+                    <div class="drop-zone" id="drop-zone">
+                        <p>Drag & Drop your images here</p>
+                        <span class="material-icons-sharp">cloud_upload</span>
+                        <input type="file" class="up" id="file-input" name="image" value="" multiple>
+                    </div>
+                    
+                    <div class="preview-container" id="preview-container"></div>
+                    <label class="lab" for="category">Select Category:</label>
                             <select id="category" onchange="showForm()">
                                 <option value="none">Categories</option>
                                 <option value="car">Car</option>
@@ -86,13 +81,11 @@
                                 <option value="home appliance">Home Appliance </option>
                                 <option value="spare part">spare parts </option>
                             </select>
-                            
-            
-                            <div id="form-container" class="form-container">
+                    <div id="form-container" class="form-container">
                                 
-                            </div>
-                        
-                        </form>
+                    </div>
+                </form>
+                
             </section>
             
         </main>
