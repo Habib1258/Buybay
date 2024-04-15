@@ -122,38 +122,26 @@
            <!--cars-->
            
             <a href="cars.html"><div class="h1" style="padding-top: 10px;"><h1>Cars</h1></div></a>
+            
             <section class="sec2">
+                {% for car in all_c %} 
+                <div class="blo-1">
+                        {% if car.image %}
+                            <p>{{ car.image.url }}</p>
+                            <img src=" {{ car.image.url }}"  width="100%">
+                        {% else %}
+                            <image src="{% static "buybay_logic/images/bmw.jpg" %}" width="100">
+                        {% endif %}
+                        <br>
+                        <h1>{{ car.brand }} {{ car.model }}</h1>
+                        <h3><strong>{{ car.des }}</strong></h3>
+                        <br>
+                        <h2>Prix : <span class="danger">{{car.price }}</span></h2>
                 
-                <div class="blo-1">
-                    <a href="it.html"  rel="golf7">
-                        <img src="{% static "/img/golf.jpg" %}" width="100%">
-                        <br>
-                        <h1>Golf 7 R</h1>
-                        <h3>tres belle voiture </h3>
-                        <br>
-                        <h2>Prix : <span class="danger">290 M</span></h2>
-                    </a>
-                    
                 </div>
-                <div class="blo-1">
-                       <a href="it1.html"><img src="{% static "/img/bmw.jpg" %}" width="100%" >
-                        <br>
-                        <h1>BMW m5</h1>
-                        <h3>tres belle voiture </h3>
-                        <br>
-                        <h2>Prix : <span class="danger">1,1 milliards</span></h2>
-                    </a>
-                </div>
-                <div class="blo-1">
-                        <a href="it2.html"><img src="{% static "/img/suv.jpg" %}" width="100%" >
-                        <br>
-                        <h1>Range rover</h1>
-                        <h3>tres belle voiture </h3>
-                        <br>
-                        <h2>Prix : <span class="danger">600 M</span></h2>
-                    </a>
-                </div>
+                {% endfor %}
             </section>
+            
             <br>
             <section class="sec2">
                 <div class="blo-1">
@@ -187,6 +175,7 @@
                     </a>
                 </div>
             </section>
+           
             <br>
             <div class="Social">
                 <div class="header3">

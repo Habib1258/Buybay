@@ -72,40 +72,25 @@
            <!--cars-->
            
             <a href="cars.html"><div class="h1" style="padding-top: 10px;"><h1>Parts & Accesories</h1></div></a>
+            
             <section class="sec2">
+                {% for item in all_p %}
+                <div class="blo-1">
+                    <a href="it.html">
+                        <img {{item.image.url}} width="100%">
+                        <br>
+                        <h1>{{ item.brand }} {{ item.model }}</h1>
+                        <h3>{{ item.description }}</h3>
+                        <br>
+                        <h2>Prix : <span class="danger">{{item.price    }}</span></h2>
+                    </a>
                 
-                <div class="blo-1">
-                    <a href="it.html"  rel="golf7">
-                        <img src="{% static "/img/cr.jpg" %}" width="100%">
-                        <br>
-                        <h1>Cremailler</h1>
-                        <h3>tres bonne etat  </h3>
-                        <br>
-                        <h2>Prix : <span class="danger">15 M</span></h2>
-                    </a>
-                    
                 </div>
-                <div class="blo-1">
-                       <a href="it1.html"><img src="{% static "/img/br.jpg" %}" width="100%" >
-                        <br>
-                        <h1>Disque de frien</h1>
-                        <h3>Etat 10/10</h3>
-                        <br>
-                        
-                        <h2>Prix : <span class="danger">1,1 M</span></h2>
-                    </a>
-                </div>
-                <div class="blo-1">
-                        <a href="it2.html"><img src="{% static "/img/05_Watcheseng.jpg" %}" width="100%" >
-                        <br>
-                        <h1>Rolex</h1>
-                        <h3>tres belle Montre </h3>
-                        <br>
-                        
-                        <h2>Prix : <span class="danger">12 M</span></h2>
-                    </a>
-                </div>
+                {% endfor %}
+                
+                
             </section>
+            
             <br>
             <section class="sec2">
                 <div class="blo-1">

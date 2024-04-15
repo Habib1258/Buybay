@@ -27,6 +27,15 @@ urlpatterns = [
     path('ab.html',views.about, name="about"),
     path('lap.html',views.laptop, name="laptop"),
     path('acc.html',views.accessories, name="accessories"),
+    path('cloth.html',views.clothing, name="clothing"),
+    path('home.html',views.home, name="home"),
+    path('new1.html',views.new1, name="new1"),
+    path('new2.html',views.new2, name="new2"),
+    path('new3.html',views.new3, name="new3"),
+    path('new4.html',views.new4, name="new4"),
+    path('new5.html',views.new5, name="new5"),
+    path('new6.html',views.new6, name="new6"),
+    path('new7.html',views.new7, name="new7"),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

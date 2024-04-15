@@ -22,3 +22,5 @@ class SellItemForm(forms.Form):
     fuel = forms.CharField(max_length=100)
     price = forms.DecimalField()
     image = forms.ImageField(required=False)
+
+

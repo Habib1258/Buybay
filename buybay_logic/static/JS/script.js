@@ -72,7 +72,7 @@ function showForm() {
             <label for="Mileage" class="lab"> Mileage:</label><br/>
             <input type="text" id="Mileage" class="in" name="Mileage" required><br/>
             <label for="Description" class="lab">Description:</label>
-            <input type="text" id="Description" class="in" name="Description" required>
+            <textarea type="text" id="Description" class="in" name="Description" placeholder="Write something.." required></textarea>
             <label for="Price" class="lab">Price:</label>
             <input type="text" id="Price" class="in" name="Price" required>
             <input type="submit" class="sub" value="Submit">
@@ -95,14 +95,14 @@ function showForm() {
             <label for="Rooms" class="lab">Rooms:</label>
             <input type="text" id="Rooms" class="in" name="Rooms">
             <label for="Description" class="lab">Description:</label>
-            <input type="text" id="Description" class="in" name="Description">
+            <textarea type="text" id="Description" class="in" name="Description" placeholder="Write something.."></textarea>
             <label for="Price" class="lab">Price:</label>
             <input type="text" id="Price" class="in" name="Price">
             <input type="submit" class="sub" value="Submit">
           </form>
         `;
         break;
-        case "laptop & phone":
+        case "laptop_phone":
         formContainer.innerHTML = `
           <form>
             <label for="Brand" class="lab" >Brand:</label><br/>
@@ -118,9 +118,9 @@ function showForm() {
             <label for="Display" class="lab"> Display:</label><br/>
             <input type="text" id="Display" class="in" name="Display"><br/>
             <label for="Graphic Card" class="lab"> Graphic Card:</label><br/>
-            <input type="text" id="Graphic Card" class="in" name="Graphic Card"><br/>
+            <input type="text" id="Graphic Card" class="in" name="Graphic_card"><br/>
             <label for="Description" class="lab">Description:</label>
-            <input type="text" id="Description" class="in" name="Description">
+            <textarea type="text" id="Description" class="in" name="Description" placeholder="Write something.."></textarea>
             <label for="Price" class="lab"> Price:</label><br/>
             <input type="text" id="Price" class="in" name="Price"><br/>
             <input type="submit" class="sub" value="Submit">
@@ -137,7 +137,7 @@ function showForm() {
             <label for="Condition" class="lab">Condition:</label><br/>
             <input type="text" id="Condition" class="in" name="Condition"><br/>
             <label for="Description" class="lab">Description:</label>
-            <input type="text" id="Description" class="in" name="Description">
+            <textarea type="text" id="Description" class="in" name="Description" placeholder="Write something.."></textarea>
             <label for="Price" class="lab"> Price:</label><br/>
             <input type="text" id="Price" class="in" name="Price"><br/>
             <input type="submit" class="sub" value="Submit">
@@ -156,7 +156,7 @@ function showForm() {
             <label for="Condition" class="lab">Condition:</label><br/>
             <input type="text" id="Condition" class="in" name="Condition"><br/>
             <label for="Description" class="lab">Description:</label>
-            <input type="text" id="Description" class="in" name="Description">
+            <textarea type="text" id="Description" class="in" name="Description" placeholder="Write something.."></textarea>
             <label for="Price" class="lab"> Price:</label><br/>
             <input type="text" id="Price" class="in" name="Price"><br/> 
             <input type="submit" class="sub" value="Submit">
@@ -173,14 +173,14 @@ function showForm() {
             <label for="Condition" class="lab">Condition:</label><br/>
             <input type="text" id="Condition" class="in" name="Condition"><br/>
             <label for="Description" class="lab">Description:</label>
-            <input type="text" id="Description" class="in" name="Description">
+            <textarea type="text" id="Description" class="in" name="Description" placeholder="Write something.."></textarea>
             <label for="Price" class="lab"> Price:</label><br/>
             <input type="text" id="Price" class="in" name="Price"><br/>
             <input type="submit" class="sub" value="Submit">
           </form>
         `;
         break;
-        case "Accessories":
+        case "accessories":
         formContainer.innerHTML = `
           <form>
             <label for="Brand" class="lab" >Brand:</label><br/>
@@ -190,7 +190,7 @@ function showForm() {
             <label for="Condition" class="lab">Condition:</label><br/>
             <input type="text" id="Condition" class="in" name="Condition"><br/>
             <label for="Description" class="lab">Description:</label>
-            <input type="text" id="Description" class="in" name="Description">
+            <textarea type="text" id="Description" class="in" name="Description" placeholder="Write something.."></textarea>
             <label for="Price" class="lab"> Price:</label><br/>
             <input type="text" id="Price" class="in" name="Price"><br/>
             <input type="submit" class="sub" value="Submit">
