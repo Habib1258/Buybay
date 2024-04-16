@@ -4,6 +4,7 @@ from django.shortcuts import render, redirect
 from .models import Car,House,Home_appliance,Spar_parts,Clothing,Laptop_phone,Accessory
 from django.contrib import messages
 from django.http import HttpResponse
+from itertools import zip_longest
 
 
 
@@ -15,11 +16,13 @@ def index(request):
 
 def cars(request):
     all_cars = Car.objects.all()
-    return render(request,'cars.html',{'all_c' : all_cars})
+    chunked_items = zip_longest(*[iter(all_cars)]*3, fillvalue=None) 
+    return render(request,'cars.html',{'all_c' : all_cars, 'chunked_items': chunked_items})
 
 
 def profil(request):
-    return render(request,'profil.html')
+    persons = Client.objects.all()
+    return render(request,'profil.html', {'person' : persons})
 
 def piece(request):
     all_pieces = Spar_parts.objects.all()
@@ -28,14 +31,41 @@ def piece(request):
 def an(request):
     return render(request,'an.html')
 
-def item(request):
-    return render(request,'item1.html')
+def item_house(request):
+    houses = House.objects.all()
+    persons = Client.objects.all()
+    return render(request,'item_house.html',{'houses' : houses, 'person' : persons})
 
-def it(request):
-    return render(request,'it.html')
+def item_lap(request):
+    laptop_phones = Laptop_phone.objects.all()
+    persons = Client.objects.all()
+    return render(request,'item_lap.html',{'laptop_phones' :laptop_phones, 'person' : persons})
 
-def car_cat(request):
-    return render(request,'car_cat.html')
+def item_accessory(request):
+    accessories = Accessory.objects.all()
+    persons = Client.objects.all()
+    return render(request,'item_house.html',{'accessories' :accessories, 'person' : persons})
+
+def item_clothing(request):
+    clothings = Clothing.objects.all()
+    persons = Client.objects.all()
+    return render(request,'item_clothing.html',{'clothings' :clothings, 'person' : persons})
+
+def item_pie(request):
+    spare_parts = Spar_parts.objects.all()
+    persons = Client.objects.all()
+    return render(request,'item_clothing.html',{'spare_parts' : spare_parts, 'person' : persons})
+
+def item_home(request):
+    Home_appliance = Home_appliance.objects.all()
+    persons = Client.objects.all()
+    return render(request,'it.html', {'home_appliance' :Home_appliance ,'person' : persons})
+
+
+def item_car(request):
+    cars = Car.objects.all()
+    persons = Client.objects.all()
+    return render(request,'item_car.html',{'cars' : cars, 'person' : persons})
 
 def sign(request):
         if request.method == 'POST':

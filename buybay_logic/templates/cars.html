@@ -122,73 +122,32 @@
            <!--cars-->
            
             <a href="cars.html"><div class="h1" style="padding-top: 10px;"><h1>Cars</h1></div></a>
-            
-            <section class="sec2">
-                {% for car in all_c %} 
-                <div class="blo-1">
-                        {% if car.image %}
-                            <p>{{ car.image.url }}</p>
-                            <img src=" {{ car.image.url }}"  width="100%">
-                        {% else %}
-                            <image src="{% static "buybay_logic/images/bmw.jpg" %}" width="100">
-                        {% endif %}
-                        <br>
-                        <h1>{{ car.brand }} {{ car.model }}</h1>
-                        <h3><strong>{{ car.des }}</strong></h3>
-                        <br>
-                        <h2>Prix : <span class="danger">{{car.price }}</span></h2>
-                
-                </div>
-                {% endfor %}
-            </section>
+            {% for chunks in chunked_items %}
+                <section class="sec2">
+                    {% for car in chunks %} 
+                        <div class="blo-1">
+                            <a href="item_car.html">
+                                {% if car.image %}
+                                    <img src="{{car.image}}" alt="{{ car.brand }}" width="100%">   
+                                {% else %}
+                                    <img src="{% static 'buybay_logic/images/bmw.jpg' %}" alt="Default Image" width="100">
+                                {% endif %}
+                                <br>
+                                <h1>{{ car.brand }} {{ car.model }}</h1>
+                                <h3><strong>{{ car.des }}</strong></h3>
+                                <br>
+                                <h2>Prix : <span class="danger">{{ car.price }}</span></h2>
+                            </a>
+                        </div>
+                    {% endfor %}
+                </section>
+            {%endfor%}
             
             <br>
-            <section class="sec2">
-                <div class="blo-1">
-                    <a href="it4.html">
-                    <img src="{% static "/img/mer.jpg" %}" width="100%">
-                        <br>
-                        <h1>Mercedes GT63</h1>
-                        <h3>tres belle voiture </h3>
-                        <br>
-                        <h2>Prix : <span class="danger">2 milliards</span></h2>
-                    </a>
-                </div>
-                <div class="blo-1">
-                    <a href="it5.html">
-                        <img src="{% static "/img/bmw1.jpg" %}" width="100%" >
-                        <br>
-                        <h1>BMW M5</h1>
-                        <h3>tres belle voiture </h3>
-                        <br>
-                        <h2>Prix : <span class="danger">1,1 milliards</span></h2>
-                    </a>
-                </div>
-                <div class="blo-1">
-                    <a href="it6.html">
-                        <img src="{% static "/img/gol.jpg" %}" width="100%" >
-                        <br>
-                        <h1>Golf 8 R</h1>
-                        <h3>tres belle voiture </h3>
-                        <br>
-                        <h2>Prix : <span class="danger">900 M</span></h2>
-                    </a>
-                </div>
-            </section>
+                
            
             <br>
-            <div class="Social">
-                <div class="header3">
-                    <h2>Social Media </h2>
-                    <br>
-                        <a href="https://www.instagram.com/habib__mustapha/"><i class="fa fa-instagram" style="font-size:36px"></i></a>
-                        <a href="https://web.facebook.com/habib.mustapha.9210"><i class="fa fa-facebook" style="font-size:36px"></i></a>
-                        <a href="https://twitter.com/Habib49485244"><i class="fa fa-twitter" style="font-size:36px"></i></a>
-                        <a href="https://github.com/Habib1258"><i class="fa fa-github" style="font-size:36px"></i></a>
-                </div>
-                
-                
-            </div>
+            
         
             
         </main>
@@ -219,8 +178,6 @@
                         <img src="{% static "/img/pro.webp" %}" >
                     </div></a>
                 </div>
-
-                
             </div>
 
             <div class="user-prof">

@@ -80,16 +80,17 @@
                 </a>
                 <br>
                 <br>
+                {% for laptop in laptop_phones %}
                 <div class="blo-1">
-                        <h1 style="text-decoration: underline;">VW golf 7 </h1>
+                        <h1 style="text-decoration: underline;">{{ laptop.brand }} {{ laptop.model }}</h1>
                         
                             <br>
                         <div class="slider">    
                             <div class="slides">
-                                <img src="{% static "/img/golf.jpg" %}" class="images"  >
-                                <img src="{% static "/img/golf1.jpg" %}" class="images" >
-                                <img src="{% static "/img/golf2.jpg" %}" class="images" >
-                                <img src="{% static "/img/golf3.jpg" %}" class="images" >
+                                <img src=" {{ laptop.image }}" class="images"  >
+                                <img src=" {{ laptop.image }}" class="images" >
+                                <img src=" {{ laptop.image }}" class="images" >
+                                <img src=" {{ laptop.image }}"  class="images" >
                                 <br>
                             </div>
                             <div class="button">
@@ -97,19 +98,21 @@
                                 <button class="ne" onclick="moveSlide(1)">></button><br><br>
                             </div>
                         </div>
-                            <h2 style="text-decoration: underline;">Prix : <span class="danger">290 M</span></h2><br>
-                            <h3><span class="cara">  - Marque :</span> VW</h3><br>
-                            <h3><span class="cara">  - Annee :</span> 2019</h3><br>
-                            <h3><span class="cara">  - Moteur :</span> 2.0 TSI</h3><br>
-                            <h3><span class="cara">  - Energie :</span> Essence</h3><br>
-                            <h3><span class="cara">  - Kilometrage:</span> 204.453KM</h3><br>
-                            <h2 style="text-decoration: underline;">Description : </h2><br>
-                            <h3>Tres belle voiture machiya 200000km </h3>
-                            <div class="like-container">
-                                
-                            </div>
-                            <br>
+
+                        <h2 style="text-decoration: underline;">Prix : <span class="danger">{{ laptop.price}}</span></h2><br>
+                        <h3><span class="cara">  - Brand :</span> {{ laptop.brand }}</h3><br>                            
+                        <h3><span class="cara">  - Model :</span> {{ laptop.model }}</h3><br>
+                        <h3><span class="cara">  - Processor :</span> {{ laptop.processor }}</h3><br>
+                        <h3><span class="cara">  - RAM :</span> {{ laptop.ram }}</h3><br>
+                        <h3><span class="cara">  - ROM :</span> {{ laptop.rom }}</h3><br>
+                        <h3><span class="cara">  - Dispaly :</span> {{ laptop.display }}</h3><br>
+                        <h3><span class="cara">  - Graphic_card :</span> {{ laptop.graphic_card }}</h3><br>
+                        <h2 style="text-decoration: underline;">Description : </h2><br>
+                        <h3>{{ laptop.description }} </h3>
+                           
+                        <br>
                 </div>
+                {% endfor %}
             </div>  
             <br>    
             <div class="conte">
@@ -117,35 +120,22 @@
                 <div class="blo1">
                         <h1 style="text-decoration: underline;">Contact : </h1>
                             <br>
+                        {% for per in person%}
                             <div class="co"><span class="ico">
                                 <i class="fa fa-user"></i>
-                            </span><h2>Name : Abdesselem</h2><br></div>
+                            </span><h2>Name : {{ per.nom }}  {{ per.prenom }} </h2><br></div>
                             <div class="co"><span class="ico">
                                 <i class="fa fa-phone"></i>
-                            </span><h2>Phone :  <span class="po"> 0549573583</span></h2><br></div>
+                            </span><h2>Phone :<span class="po">  {{ per.num_telephone }} </span></h2><br></div>
                             <div class="co"><span class="ico">
                                 <i class="fa fa-envelope"></i>
-                            </span><h2>E-mail : <span class="em">habib054mustapha@gmail.com</span><br></div>
-                            <div class="co"><span class="ico">
-                                <i class="fa fa-map-marker"></i>
-                            </span><h2>localisation : Tiaret</h2><br></div>
-                            
+                            </span><h2>E-mail : <span class="em">{{ per.email }}</span><br></div>
+                        {%endfor%}
                           
                 </div>
             </div>
             <br>
-            <div class="Social">
-                <div class="header">
-                    <h2>Social Media </h2>
-                    <br>
-                        <a href="https://www.instagram.com/habib__mustapha/"><i class="fa fa-instagram" id="icon" style="font-size:36px"></i></a>
-                        <a href="https://web.facebook.com/habib.mustapha.9210"><i class="fa fa-facebook" id="icon" style="font-size:36px"></i></a>
-                        <a href="https://twitter.com/Habib49485244"><i class="fa fa-twitter" id="icon" style="font-size:36px"></i></a>
-                        <a href="https://github.com/Habib1258"><i class="fa fa-github" id="icon" style="font-size:36px"></i></a>
-                </div>
-                
-                
-            </div>
+            
         </main>
         <!-- end main content--> 
         <div class="cont">

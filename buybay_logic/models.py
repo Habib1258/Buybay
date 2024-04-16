@@ -26,8 +26,8 @@ class Client(models.Model):
         managed = False
         db_table = 'client'
 
-def __str__(self):
-        return self.name
+    def __str__(self):
+        return {self.nom, self.prenom, self.email, self.num_telephone}
 
 
 class Car(models.Model):
@@ -42,7 +42,7 @@ class Car(models.Model):
     fuel = models.CharField(max_length=10)
     price = models.CharField(max_length=10000)
     des = models.CharField(max_length=1000)
-    image = models.FileField(upload_to='buybay_logic/images/')
+    image = models.FileField(upload_to='images/')
     id_client = models.ForeignKey('Client', on_delete=models.CASCADE)
 
     class Meta:
@@ -70,7 +70,7 @@ class Accessory(models.Model):
         db_table = 'buybay_logic_accessory'
 
     def __str__(self):
-        return f"{self.brand} {self.model} {self.category}"
+        return f"{self.brand} {self.model} {self.condition} {self.description} {self.price} {self.image}"
 
 
 class Spar_parts(models.Model):
@@ -89,7 +89,7 @@ class Spar_parts(models.Model):
         db_table = 'buybay_logic_spar_parts'
 
     def __str__(self):
-        return f"{self.brand} {self.model}"
+        return f"{self.brand} {self.model} {self.condition} {self.description} {self.price} {self.image}"
 
 class Home_appliance(models.Model):
     id = models.BigAutoField(primary_key=True)
@@ -107,7 +107,7 @@ class Home_appliance(models.Model):
         db_table = 'buybay_logic_Home_appliance'
 
     def __str__(self):
-        return f"{self.brand} {self.model}"
+        return f"{self.brand} {self.model} {self.condition} {self.description} {self.price} {self.image}"
 
 
 class Clothing(models.Model):
@@ -127,7 +127,7 @@ class Clothing(models.Model):
         db_table = 'buybay_logic_clothing'
 
     def __str__(self):
-        return f"{self.brand} {self.model}"
+        return f"{self.brand} {self.model} {self.condition} {self.description} {self.price} {self.size} {self.image}"
 
 
 class Laptop_phone(models.Model):
@@ -150,7 +150,7 @@ class Laptop_phone(models.Model):
         db_table = 'buybay_logic_laptop_phone'
 
     def __str__(self):
-        return f"{self.brand} {self.model} {self.description} {self.price} {self.image} {self.price}"
+        return f"{self.brand} {self.model} {self.ram} {self.rom} {self.description} {self.display} {self.image} {self.price} {self.graphic_card} "
     
 
 
@@ -173,4 +173,4 @@ class House(models.Model):
         db_table = 'buybay_logic_house'
 
     def __str__(self):
-        return f"{self.Type} {self.location} {self.category}"
+        return f"{self.Type} {self.location} {self.category} {self.area} {self.floor} {self.rooms} {self.facade} {self.image} {self.price}"

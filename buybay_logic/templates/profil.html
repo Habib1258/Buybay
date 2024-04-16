@@ -172,19 +172,20 @@
             <div class="user-prof1">
                 <img src="{% static "/img/pro.webp" %}" class="img1"><br><br>
                 <div class="logo">
-                    
+                    {% for profil in person%}
                     <span class="ico">
                         <i class="fa fa-user-circle"></i> 
                     </span>
-                    <h2>Abdesselem habib</h2>
+                    <h3 style="font-size: 20px;font-weight: bold;">{{ profil.nom }} {{ profil.prenom}}</h3><br>
                     <span class="ico">
                         <i class="fa fa-hashtag"></i> 
                     </span>
-                    <h2>Numero :#247</h2>
+                    <h2>Numero : #{{ profil.id }}</h2><br>
                     <span class="ico">
-                        <i class="fa fa-volume-up"></i> 
+                        <i class="fa fa-phone"></i> 
                     </span>
-                    <h2>Annonce : 0</h2>
+                    <h2>Phone : {{ profil.num_telephone }}</h2>
+                    {%endfor%}
 
                     
                 </div>
@@ -201,22 +202,13 @@
 
     
     </div>
-    <div class="Social">
-        <div class="header1">
-            <h2>Social Media </h2>
-            <br>
-                <a href="https://www.instagram.com/habib__mustapha/"><i class="fa fa-instagram" style="font-size:36px"></i></a>
-                <a href="https://web.facebook.com/habib.mustapha.9210"><i class="fa fa-facebook" style="font-size:36px"></i></a>
-                <a href="https://twitter.com/Habib49485244"><i class="fa fa-twitter" style="font-size:36px"></i></a>
-                <a href="https://github.com/Habib1258"><i class="fa fa-github" style="font-size:36px"></i></a>
-        </div>
+    
         
         
     </div>
     <div style="margin-bottom: 200px;"></div>
 
     <script src="{% static "/JS/index.js" %}"></script>
-       <!-- <script src="/JS/light.js"></script>-->
 
     
 

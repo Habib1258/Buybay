@@ -8,9 +8,10 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp"
     rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
     <link rel="icon" ico href="{% static "img/LO.png" %}">
     {% load static %}
-    <link rel="stylesheet" href="{% static "css/index.css" %}">
+    <link rel="stylesheet" href="{% static "css/item.css" %}">
     
     
 </head>
@@ -19,7 +20,7 @@
         <aside>
             <div class="toggle">
                 <div class="logo">
-                    <img src="{% static "/img/LO.png" %}">
+                    <img src="{% static "img/LO.png" %}">
                 </div>
             </div>
 
@@ -31,7 +32,7 @@
                         </span>
                     <h3>Homepage</h3>
                 </a>
-                <a href="prof.html">
+                <a href="profil.html">
                     <span class="material-icons-sharp">
                         account_circle
                         </span>
@@ -39,7 +40,7 @@
                 </a>
                 
                 
-                <a href="categorie.html">
+                <a href="#">
                     <span class="material-icons-sharp">
                         category
                     </span>
@@ -54,76 +55,82 @@
                     <a href="cars.html" id="a1"><li ><img src="{% static "/img/icons8-washing-machine-24 (1).png" %}" width="15px"> home applience</li></a>
                     <a></a>
                 </ul>
-
-                
             </div>
         </aside>
 
         <main>
             
             <div class="sear">
-                <input type="text" placeholder="Search...">
+                
                 <a href="#">
-                    <span class="material-icons-sharp">
-                        search
-                    </span>
+                    <input type="text" placeholder="Search...">
+                    <button type="submit" class="bouu"><img src="{% static "/img/sharp_search_black_18dp.png" %}" alt=""></button>
                 </a>
             </div>
            <!--cars-->
+            <br>
            
-            <a href="cars.html"><div class="h1" style="padding-top: 10px;"><h1>Parts & Accesories</h1></div></a>
-            
-            <section class="sec2">
-                {% for item in all_p %}
+            <div class="conte">
+                <a href="cars.html">
+                    <button class="ret">
+                        <span class="material-icons-sharp">
+                            keyboard_return
+                        </span>
+                    </button>
+                </a>
+                <br>
+                <br>
+                {% for spar in spare_parts %}
                 <div class="blo-1">
-                    <a href="item_pie.html">
-                        <img {{item.image.url}} width="100%">
+                    
+                        <h1 style="text-decoration: underline;">{{ spar.brand }} {{ spar.model}}</h1>
+                        
+                        <div class="slider">    
+                            <div class="slides">
+                                <img src="{{ spar.image }}" class="images">
+                                <img src="{{ spar.image }}" class="images">
+                                <img src="{{ spar.image }}" class="images">
+                                <img src="{{ spar.image }}" class="images">
+                            </div>
+                            <div class="button">
+                                <button class="pr" onclick="moveSlide(-1)"><</button>
+                                <button class="ne" onclick="moveSlide(1)">></button><br><br>
+                            </div>
+                        </div>
+                        
+                        <h2 style="text-decoration: underline;">Price : <span class="danger">{{ spar.price}}</span></h2><br>
+                        <h3><span class="cara">  - Brand :</span> {{ spar.brand}}</h3><br>
+                        <h3><span class="cara">  - Model :</span> {{ spar.model}}</h3><br>
+                        <h3><span class="cara">  - Condition :</span> {{ spar.condition}}</h3><br>
+                        <h2 style="text-decoration: underline;">Description : </h2><br>
+                        <h3>{{ spar.description}} </h3>
                         <br>
-                        <h1>{{ item.brand }} {{ item.model }}</h1>
-                        <h3>{{ item.description }}</h3>
-                        <br>
-                        <h2>Prix : <span class="danger">{{item.price    }}</span></h2>
-                    </a>
-                
+                    
                 </div>
                 {% endfor %}
                 
+            </div>  
+            <br>    
+            <div class="conte">
                 
-            </section>
-            
-            <br>
-            <section class="sec2">
-                <div class="blo-1">
-                    <a href="it4.html">
-                    <img src="{% static "/img/mer.jpg" %}" width="100%">
-                        <br>
-                        <h1>Mercedes GT63</h1>
-                        <h3>tres belle voiture </h3>
-                        <br>
-                        <h2>Prix : <span class="danger">2 milliards</span></h2>
-                    </a>
+                <div class="blo1">
+                        <h1 style="text-decoration: underline;">Contact : </h1>
+                            <br>
+                        {% for per in person %}
+                            <div class="co"><span class="ico">
+                                <i class="fa fa-user"></i>
+                            </span><h2>Name : {{ per.nom }}  {{ per.prenom }} </h2><br></div>
+                            <div class="co"><span class="ico">
+                                <i class="fa fa-phone"></i>
+                            </span><h2>Phone :<span class="po">  {{ per.num_telephone }} </span></h2><br></div>
+                            <div class="co"><span class="ico">
+                                <i class="fa fa-envelope"></i>
+                            </span><h2>E-mail : <span class="em">{{ per.email }}</span><br></div>
+                        {%endfor%}
+                            
+                          
                 </div>
-                <div class="blo-1">
-                    <a href="it5.html">
-                        <img src="{% static "/img/bmw1.jpg" %}" width="100%" >
-                        <br>
-                        <h1>BMW M5</h1>
-                        <h3>tres belle voiture </h3>
-                        <br>
-                        <h2>Prix : <span class="danger">1,1 milliards</span></h2>
-                    </a>
-                </div>
-                <div class="blo-1">
-                    <a href="it6.html">
-                        <img src="{% static "/img/gol.jpg" %}" width="100%" >
-                        <br>
-                        <h1>Golf 8 R</h1>
-                        <h3>tres belle voiture </h3>
-                        <br>
-                        <h2>Prix : <span class="danger">900 M</span></h2>
-                    </a>
-                </div>
-            </section>
+            </div>
             <br>
             
         </main>
@@ -151,7 +158,7 @@
                 </div>
                 <div class="prof">
                     <a href="profil.html"><div class="profi">
-                        <img src="{% static "/img/pro.webp" %}" style="width: 20px">
+                        <img src={% static "/img/pro.webp"%} style="width: 20px">
                     </div></a>
                 </div>
 
@@ -160,7 +167,7 @@
 
             <div class="user-prof">
                 <div class="logo">
-                    <a href="ab.html"><img src="{% static "/img/LO.png" %}" class="img"></a>
+                    <img src="{% static "img/LO.png" %}">
                     <h2>BuyBay</h2>
                     <h3>Discover, Bid, Buy - Your Way to Great Deals at BuyBay!</h3>
                 </div>
@@ -173,18 +180,6 @@
 
 
     
-    </div>
-    <div class="Social">
-        <div class="header2">
-            <h2>Social Media </h2>
-            <br>
-                <a href="https://www.instagram.com/habib__mustapha/"><i class="fa fa-instagram" style="font-size:36px"></i></a>
-                <a href="https://web.facebook.com/habib.mustapha.9210"><i class="fa fa-facebook" style="font-size:36px"></i></a>
-                <a href="https://twitter.com/Habib49485244"><i class="fa fa-twitter" style="font-size:36px"></i></a>
-                <a href="https://github.com/Habib1258"><i class="fa fa-github" style="font-size:36px"></i></a>
-        </div>
-        
-        
     </div>
     <div style="margin-bottom: 200px;"></div>
 
