@@ -1,10 +1,14 @@
 from django.shortcuts import render
 from .models import  Client
+from .models import Post
 from django.shortcuts import render, redirect
 from .models import Car,House,Home_appliance,Spar_parts,Clothing,Laptop_phone,Accessory
 from django.contrib import messages
 from django.http import HttpResponse
 from itertools import zip_longest
+from django.contrib.auth import authenticate, login
+from django.http import JsonResponse
+from django.shortcuts import get_object_or_404
 
 
 
@@ -15,9 +19,10 @@ def index(request):
     return render(request,'index.html')
 
 def cars(request):
-    all_cars = Car.objects.all()
+    all_cars = Car.objects.filter(approved = 1)
+    
     chunked_items = zip_longest(*[iter(all_cars)]*3, fillvalue=None) 
-    return render(request,'cars.html',{'all_c' : all_cars, 'chunked_items': chunked_items})
+    return render(request,'cars.html',{'all_c' : all_cars, 'chunked_items': chunked_items,})
 
 
 def profil(request):
@@ -64,8 +69,12 @@ def item_home(request):
 
 def item_car(request):
     cars = Car.objects.all()
+    try:
+        img = Car.objects.get(brand=request.GET.get('brand'))
+    except Car.DoesNotExist:
+        img = None
     persons = Client.objects.all()
-    return render(request,'item_car.html',{'cars' : cars, 'person' : persons})
+    return render(request,'item_car.html',{'cars' : cars, 'person' : persons,  'img': img if img else None})
 
 def sign(request):
         if request.method == 'POST':
@@ -79,8 +88,7 @@ def sign(request):
             return redirect('index.html')
         return render(request,'si.html')
 
-def mod(request):
-    return render(request,'mod.html')
+
 
 
 def model(request):
@@ -93,16 +101,38 @@ def immobilier(request):
     return render(request,'im.html')
 
 def login(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)
+            return redirect('home')
+        else:
+            error_message = 'Invalid username or password.'
+            return render(request, 'login.html', {'error_message': error_message})
     return render(request,'lo.html')
 
-def mod1(request):
-    return render(request,'mod1.html')
+
+
+def mod(request):
+    cars = Car.objects.filter(approved=0)
+    return render(request,'mod.html', {'cars': cars})
 
 def home(request):
     return render(request,'home.html')
 
 def clothing(request):
     return render(request,'cloth.html')
+
+def approve_car(request):
+    if request.method == 'POST' :
+        car_id = request.POST.get('car_id')
+        car = get_object_or_404(Car, id=car_id)
+        car.approved = 1
+        car.save()
+        return JsonResponse({'success': True})
+    return JsonResponse({'success': False})
 
 
 
@@ -336,3 +366,25 @@ def accessories(request):
 def success(request):
     success_message = messages.get_messages(request).__str__()  
     return render(request, 'success.html', {'success_message': success_message})
+
+
+def post_list(request):
+    # Fetch only approved posts
+    posts = Post.objects.filter(approved=True)
+    return render(request, 'post_list.html', {'posts': posts})
+
+def moderator_page(request):
+    unapproved_posts = Post.objects.filter(approved=False)
+    return render(request, 'moderator/mod1.html', {'unapproved_posts': unapproved_posts})
+
+def approve_post(request, post_id):
+    post = Post.objects.get(id=post_id)
+    post.approved = True
+    post.save()
+    return redirect('mod1.html')
+
+def reject_post(request, post_id):
+    # Get the post by ID and delete it
+    post = Post.objects.get(id=post_id)
+    post.delete()
+    return redirect('mod1.html')

@@ -14,40 +14,21 @@
 </header>
 
 <div class="container">
-    <table>
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Id_client</th>
-                <th>Image</th>
-                <th>Product Name</th>
-                <th>Description</th>
-                <th>Price</th>
-                <th>Action</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>1</td>
-                <td>243</td>
-                <td>Image</td>
-                <td>Product 1</td>
-                <td class="des">{% lorem 1 b random %}</td>
-                <td>$20</td>
-                <td><button class="btn">Approve</button> <button class="btn">Delete</button></td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>432</td>
-                <td>Image2</td>
-                <td>Product 2</td>
-                <td class="des">cv</td>
-                <td>$270</td>
-                <td><button class="btn">Approve</button> <button class="btn">Delete</button></td>
-            </tr>
-            <!-- Add more rows for additional products -->
-        </tbody>
-    </table>
+    <h1>Unpublished Posts</h1>
+            <ul>
+                {% for car in car %}
+                    <li>{{ car.title }} - {{ car.content }}</li>
+                    <form action="{% url  car.id %}" method="car">
+                        {% csrf_token %}
+                        <button type="submit">Publish</button>
+                    </form>
+                    <form action="{% url 'delete_car' car.id %}" method="car">
+                        {% csrf_token %}
+                        <button type="submit">Delete</button>
+                    </form>
+                {% endfor %}
+            </ul>
+            <br>
 </div>
 
 </body>

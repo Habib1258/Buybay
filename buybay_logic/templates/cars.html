@@ -74,7 +74,7 @@
                       </select><br><br><br><br>
 
 
-                    <h3 class="filtre">Moteur :</h3><br>
+                    <h3 class="filtre">Engine :</h3><br>
                     <input type="checkbox" id="1.0 - 1.5" name="1.0 - 1.5" value="1.0 - 1.5">
                     <label for="1.0 - 1.5"> 1.0 - 1.5</label><br>
                     <input type="checkbox" id="1.6 - 1.9" name="1.6 - 1.9" value="1.6 - 1.9">
@@ -83,27 +83,22 @@
                     <label for="2.0 - 2.5"> 2.0 - 2.5</label><br>
                     <input type="checkbox" id="> 2.5" name="> 2.5" value="> 2.5">
                     <label for="> 2.5"> > 2.5</label><br><br>
-                    <h3 class="filtre">Annee :</h3><br>
+                    <h3 class="filtre">Year :</h3><br>
                     <input type="number" id="annee1" min="1980" max="2024" placeholder="MIN">
                     <input type="number" id="annee" min="1980" max="2024" placeholder="MAX" ><br><br>
-                    <h3 class="filtre">Kilometrage :</h3><br>
+                    <h3 class="filtre">Mileage :</h3><br>
                     <input type="number" id="annee1" min="1" max="1000000" placeholder="MIN">
                     <input type="number" id="annee" min="1" max="1000000" placeholder="MAX" ><br><br>
-                    <h3 class="filtre">Boîte de vitesses :</h3><br>
-                    <input type="checkbox" id="Boîte manuelle" name="Boîte manuelle" value="Boîte manuelle">
-                    <label for="Boîte manuelle"> Boîte manuelle</label><br>
-                    <input type="checkbox" id="Boîte automatique" name="Boîte automatique" value="Boîte automatique">
-                    <label for="Boîte automatique"> Boîte automatique</label><br><br>
-                    <h3 class="filtre">Energie :</h3><br>
-                    <input type="checkbox" id="Essence" name="Essence" value=" Essence">
-                    <label for="Essence"> Essence</label><br>
+                    <h3 class="filtre">Fuel :</h3><br>
+                    <input type="checkbox" id="Petrol" name="Petrol" value=" Petrol">
+                    <label for="Petrol"> Petrol</label><br>
                     <input type="checkbox" id="Diesel" name=" Diesel" value=" Diesel">
                     <label for="Diesel">  Diesel</label><br><br><br>
                     
                     <button type="submit"  class="but1">
                         <span class="material-icons-sharp">
                             tune
-                        </span> <h3 class="h12">Filtre</h3></button>
+                        </span> <h3 class="h12">filter</h3></button>
                 </div>
 
                 
@@ -125,20 +120,22 @@
             {% for chunks in chunked_items %}
                 <section class="sec2">
                     {% for car in chunks %} 
-                        <div class="blo-1">
-                            <a href="item_car.html">
-                                {% if car.image %}
-                                    <img src="{{car.image}}" alt="{{ car.brand }}" width="100%">   
-                                {% else %}
-                                    <img src="{% static 'buybay_logic/images/bmw.jpg' %}" alt="Default Image" width="100">
-                                {% endif %}
-                                <br>
-                                <h1>{{ car.brand }} {{ car.model }}</h1>
-                                <h3><strong>{{ car.des }}</strong></h3>
-                                <br>
-                                <h2>Prix : <span class="danger">{{ car.price }}</span></h2>
-                            </a>
-                        </div>
+                        {% if car %}
+                            <div class="blo-1">
+                                <a href="item_car.html">
+                                    {% if car.image %}
+                                        <img src="buybay_logic/{{car.image}}" alt="{{ car.brand }}" width="100%">   
+                                    {% else %}
+                                        <img src="{% static 'buybay_logic/images/bmw.jpg' %}" alt="Default Image" width="100">
+                                    {% endif %}
+                                    <br>
+                                    <h1>{{ car.brand }} {{ car.model }}</h1>
+                                    <h3><strong>{{ car.des }}</strong></h3>
+                                    <br>
+                                    <h2>Prix : <span class="danger">{{ car.price }}</span></h2>
+                                </a>
+                            </div>
+                        {% endif %}
                     {% endfor %}
                 </section>
             {%endfor%}

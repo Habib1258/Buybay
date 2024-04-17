@@ -17,8 +17,7 @@ urlpatterns = [
     path('pie.html',views.piece, name="piece"),
     path('si.html',views.sign, name="sign"),
     path('categorie.html',views.categorie, name="categorie"),
-    path('mod.html',views.mod, name="mod1"),
-    path('mod1.html',views.mod1, name=" mod"),
+    path('mod.html',views.mod, name=" mod"),
     path('item_house.html',views.item_house, name="item_house"),
     path('item_home.html',views.item_home, name="item_home"),
     path('item_car.html',views.item_car, name="item_car"),
@@ -40,6 +39,9 @@ urlpatterns = [
     path('new5.html',views.new5, name="new5"),
     path('new6.html',views.new6, name="new6"),
     path('new7.html',views.new7, name="new7"),
+    path('mod.html', views.moderator_page, name='moderator_page'),
+    path('approve_car/', views.approve_car, name='approve_car'),
+    
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

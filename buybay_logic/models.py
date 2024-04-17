@@ -36,13 +36,14 @@ class Car(models.Model):
     model = models.CharField(max_length=100)
     mileage = models.CharField(max_length=1000000)
     category = models.CharField(max_length=20, null=False)
+    approved = models.BooleanField(default=False)
     year = models.IntegerField()
     finition = models.CharField(max_length=50)
     engine = models.CharField(max_length=10)
     fuel = models.CharField(max_length=10)
     price = models.CharField(max_length=10000)
     des = models.CharField(max_length=1000)
-    image = models.FileField(upload_to='images/')
+    image = models.FileField(upload_to='buybay_logic/images/')
     id_client = models.ForeignKey('Client', on_delete=models.CASCADE)
 
     class Meta:
@@ -59,6 +60,7 @@ class Accessory(models.Model):
     brand = models.CharField(max_length=100)
     model = models.CharField(max_length=100)
     category = models.CharField(max_length=20, null=False)
+    approved = models.BooleanField(default=False)
     condition = models.CharField(max_length=50)
     description = models.TextField()
     price = models.CharField(max_length=10000)
@@ -78,6 +80,7 @@ class Spar_parts(models.Model):
     brand = models.CharField(max_length=100)
     model = models.CharField(max_length=100)
     category = models.CharField(max_length=20, choices=category_choices)
+    approved = models.BooleanField(default=False)
     condition = models.CharField(max_length=50)
     description = models.TextField()
     price = models.CharField(max_length=100000)
@@ -96,6 +99,7 @@ class Home_appliance(models.Model):
     brand = models.CharField(max_length=100)
     model = models.CharField(max_length=100)
     category = models.CharField(max_length=20, choices=category_choices)
+    approved = models.BooleanField(default=False)
     condition = models.CharField(max_length=50)
     description = models.TextField()
     price = models.CharField(max_length=10000)
@@ -115,6 +119,7 @@ class Clothing(models.Model):
     brand = models.CharField(max_length=100)
     model = models.CharField(max_length=100)
     category = models.CharField(max_length=20, choices=category_choices)
+    approved = models.BooleanField(default=False)
     size = models.IntegerField()
     condition = models.CharField(max_length=50)
     description = models.TextField()
@@ -136,6 +141,7 @@ class Laptop_phone(models.Model):
     model = models.CharField(max_length=100)
     category = models.CharField(max_length=20, choices=category_choices)
     processor = models.CharField(max_length=20)
+    approved = models.BooleanField(default=False)
     ram = models.CharField(max_length=50)
     rom = models.CharField(max_length=50)
     graphic_card = models.CharField(max_length=20)
@@ -160,6 +166,7 @@ class House(models.Model):
     Type = models.CharField(max_length=100)  
     category = models.CharField(max_length=20)
     area = models.CharField(max_length=100)
+    approved = models.BooleanField(default=False)
     facade = models.IntegerField()
     rooms = models.IntegerField()
     floor = models.IntegerField()
@@ -174,3 +181,17 @@ class House(models.Model):
 
     def __str__(self):
         return f"{self.Type} {self.location} {self.category} {self.area} {self.floor} {self.rooms} {self.facade} {self.image} {self.price}"
+    
+
+
+class Post(models.Model):
+    title = models.CharField(max_length=100)
+    content = models.TextField()
+    published = models.BooleanField(default=False)
+
+    class Meta:
+            managed = False
+            db_table = 'buybay_logic_moderator'
+
+    def __str__(self):
+            return f"{self.title} {self.content} {self.published}"

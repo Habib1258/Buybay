@@ -87,17 +87,11 @@
                             <br>
                         <div class="slider">    
                             <div class="slides">
-                                <img src="{% static "/img/golf.jpg" %}" class="images"  >
-                                <img src="{% static "/img/golf1.jpg" %}" class="images" >
-                                <img src="{% static "/img/golf2.jpg" %}" class="images" >
-                                <img src="{% static "/img/golf3.jpg" %}" class="images" >
+                                <img src= "buybay_logic/{{car.image}}" class="images">
                                 <br>
                             </div>
-                            <div class="button">
-                                <button class="pr" onclick="moveSlide(-1)"><</button>
-                                <button class="ne" onclick="moveSlide(1)">></button><br><br>
-                            </div>
-                        </div>
+                            
+                        </div><br>
                             <h2 style="text-decoration: underline;">Prix : <span class="danger"> {{car.price}}</span></h2><br>
                             <h3><span class="cara">  - Brand :</span> {{car.brand}}</h3><br>
                             <h3><span class="cara">  - Model :</span> {{car.model}}</h3><br>

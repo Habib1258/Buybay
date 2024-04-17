@@ -127,12 +127,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = 'static/'
-MEDIA_URL =''
+MEDIA_URL ='buybay_logic/'
 
 STATICIMG_DIRS=[os.path.join(BASE_DIR,'buybay/static')]
 
 STATIC_ROOT=os.path.join(BASE_DIR,'static')
-MEDIA_ROOT = ''
+MEDIA_ROOT = 'buybay_logic/'
 
 
 # Default primary key field type
