@@ -40,7 +40,9 @@ urlpatterns = [
     path('new6.html',views.new6, name="new6"),
     path('new7.html',views.new7, name="new7"),
     path('mod.html', views.moderator_page, name='moderator_page'),
-    path('approve_car/', views.approve_car, name='approve_car'),
+    path('approve/<int:id>/', views.approve_post, name='approve_post'),
+    path('reject/<int:id>/', views.reject_post, name='reject_post'),
+    path('mod.html', views.moderator_page, name='mod'),
     
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

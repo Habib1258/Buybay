@@ -104,6 +104,11 @@ body{
         border-radius: 5px;
         cursor: pointer;
     }
+
+    
     .btn:hover {
         background-color: #45a049;
     }
+.line {
+    display: inline-block;
+}

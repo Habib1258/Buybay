@@ -448,3 +448,19 @@ function showForm() {
       formContainer.style.display = "none";
     }
   }
+
+  $(document).ready(function() {
+    // Function to handle the click event of the "Approve" button
+    $('.btn-approve').click(function() {
+        var carId = $(this).data('car-id');
+        // Here, you can perform an action to approve the car with the ID 'carId'
+        console.log("Car ID " + carId + " approved.");
+    });
+
+    // Function to handle the click event of the "Delete" button
+    $('.btn-delete').click(function() {
+        var carId = $(this).closest('tr').attr('id').replace('car-', '');
+        // Here, you can perform an action to delete the car with the ID 'carId'
+        console.log("Car ID " + carId + " deleted.");
+    });
+});

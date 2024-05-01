@@ -1,14 +1,8 @@
-from django.shortcuts import render
-from .models import  Client
-from .models import Post
-from django.shortcuts import render, redirect
-from .models import Car,House,Home_appliance,Spar_parts,Clothing,Laptop_phone,Accessory
-from django.contrib import messages
-from django.http import HttpResponse
+from django.shortcuts import render, redirect ,get_object_or_404
+from .models import Client,Car,House,Home_appliance,Spar_parts,Clothing,Laptop_phone,Accessory
+from django.http import HttpResponse, JsonResponse
 from itertools import zip_longest
 from django.contrib.auth import authenticate, login
-from django.http import JsonResponse
-from django.shortcuts import get_object_or_404
 
 
 
@@ -19,8 +13,7 @@ def index(request):
     return render(request,'index.html')
 
 def cars(request):
-    all_cars = Car.objects.filter(approved = 1)
-    
+    all_cars = Car.objects.filter(approved =1)
     chunked_items = zip_longest(*[iter(all_cars)]*3, fillvalue=None) 
     return render(request,'cars.html',{'all_c' : all_cars, 'chunked_items': chunked_items,})
 
@@ -125,14 +118,7 @@ def home(request):
 def clothing(request):
     return render(request,'cloth.html')
 
-def approve_car(request):
-    if request.method == 'POST' :
-        car_id = request.POST.get('car_id')
-        car = get_object_or_404(Car, id=car_id)
-        car.approved = 1
-        car.save()
-        return JsonResponse({'success': True})
-    return JsonResponse({'success': False})
+
 
 
 
@@ -195,9 +181,10 @@ def new1(request):
             mileage=mileage, des=des, finition=finition, price=price, image=image, fuel=fuel, category=category
         )
         car.save()
-        messages.success(request, 'Car added successfully')
         return render(request, 'cars.html' ,{'all' : all_cars} )
     return HttpResponse("Response")
+
+
 
 
 def new2(request):
@@ -246,7 +233,6 @@ def new4(request):
             , price=price, image=image, category=category
         )
         accessory.save()
-        messages.success(request, 'Accessory added successfully')
         return redirect('acc.html')
     return HttpResponse("Response")
 
@@ -269,7 +255,6 @@ def new3(request):
              price=price, image=image, category=category
         )
         home_appliance.save()
-        messages.success(request, 'Home appliance added successfully')
         return redirect('im.html')
     return HttpResponse("Response")
 
@@ -294,7 +279,6 @@ def new5(request):
               price=price, image=image, category=category
         )
         spar_parts.save()
-        messages.success(request, 'Spar part added successfully')
         return redirect('pie.html')
     return render(request, 'new5.html')
 
@@ -319,7 +303,6 @@ def new6(request):
             description=description, price=price, image=image, category=category
         )
         clothing.save()
-        messages.success(request, 'House added successfully')
         return redirect('im.html')
     return render(request, 'new6.html')
 
@@ -348,7 +331,6 @@ def new7(request):
             , description=Description, graphic_card=Graphic_card
         )
         laptop_phone.save()
-        messages.success(request, 'House added successfully')
         return redirect('lap.html')
     return render(request, 'new7.html')
 
@@ -363,28 +345,23 @@ def laptop(request):
 def accessories(request):
     return render(request,'acc.html')
 
-def success(request):
-    success_message = messages.get_messages(request).__str__()  
-    return render(request, 'success.html', {'success_message': success_message})
 
 
-def post_list(request):
-    # Fetch only approved posts
-    posts = Post.objects.filter(approved=True)
-    return render(request, 'post_list.html', {'posts': posts})
+
 
 def moderator_page(request):
-    unapproved_posts = Post.objects.filter(approved=False)
+    unapproved_posts = Car.objects.filter(approved=0)
     return render(request, 'moderator/mod1.html', {'unapproved_posts': unapproved_posts})
 
-def approve_post(request, post_id):
-    post = Post.objects.get(id=post_id)
-    post.approved = True
-    post.save()
-    return redirect('mod1.html')
+def approve_post(request, id):
+        car = Car.objects.get(id=id)
+        car.approved = True
+        car.save()
+        return redirect('mod')
 
-def reject_post(request, post_id):
-    # Get the post by ID and delete it
-    post = Post.objects.get(id=post_id)
+
+def reject_post(request, id):
+    
+    post = Car.objects.get(id=id)
     post.delete()
-    return redirect('mod1.html')
+    return redirect('mod.html')

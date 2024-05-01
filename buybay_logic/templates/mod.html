@@ -27,18 +27,31 @@
             </tr>
         </thead>
         <tbody>
-            {% for car in cars %}
-                <tr id="car-{{ car.id }}">
-                    <td>{{car.id}}</td>
-                    <td>{{car.brand}}</td>
-                    <td>{{car.model}}</td>
-                    <td><img src= "buybay_logic/{{car.image}}" class="images" width="40%"></td>
-                    <td class="des">{{car.des}}</td>
-                    <td>{{car.price}}</td>
-                    <td><button class="btn" data-car-id="{{ car.id }}">Approve</button> 
-                        <button class="btn">Delete</button></td>
-                </tr>
-            {% endfor %}
+            
+                {% for car in cars %}
+                    <tr id="car-{{ car.id }}">
+                        <td>{{car.id}}</td>
+                        <td>{{car.brand}}</td>
+                        <td>{{car.model}}</td>
+                        <td><img src= "buybay_logic/{{car.image}}" class="images" width="40%"></td>
+                        <td class="des">{{car.des}}</td>
+                        <td>{{car.price}}</td>
+                        <td class="line">
+                            {% if not car.approved %}
+                                <form action="{% url 'approve_post' id=car.id %}" method="post">
+                                    {% csrf_token %}
+                                    <button type="submit" class="btn">Approve</button>
+                                </form>
+                            <br>
+                                <form action="{% url 'reject_post' id=car.id %}" method="post">
+                                    {% csrf_token %}
+                                    <button type="submit" class="btn">Delete</button>
+                                </form>
+                            {% endif %}
+                        </td>
+                    </tr>
+                {% endfor %}
+            
         </tbody>
         
     </table>
