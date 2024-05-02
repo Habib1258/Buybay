@@ -21,26 +21,9 @@
 
         <div class="ma">
 
-                
-                    <label for="first-name">First-Name</label>
-                    <div class="in">
-                        <input class="inpu" type="text" name="first-name" placeholder="first-name" required>
-                        <span class="ico">
-                            <i class="fa fa-user"></i>
-                        </span>
-                    </div>
-
-                
-                    <label for="name">name</label>
-                    <div class="in">
-                        <input class="inpu" type="text" name="name" placeholder="Name" required>
-                        <span class="ico">
-                            <i class="fa fa-user"></i>
-                        </span>
-                    </div>
-                
-
-                
+                <form method="post" >
+                    {% csrf_token %}
+                    
                     <label for="email">E-mail</label>
                     <div class="in">
                         <input class="inpu" type="mail" name="email" placeholder="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
@@ -61,13 +44,13 @@
                         </span>
                     </div>
                     <br>
-                    <a href="mod.html"><button >Moderator</button></a>
                 
 
                     <a href="index.html"><button class="but" type="submit" value=""><h2 style="font-size: large;">LOG IN</h2> </button></a>
                     
                 
                 <p class="p">If you don't have an acount, <a href="si.html" style="color: blue;"> sign up here!</a></p>
+                </form>
         </div>
     </div>
     <div style="margin-bottom: 200px;"></div>

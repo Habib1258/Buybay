@@ -1,8 +1,9 @@
 from django.shortcuts import render, redirect ,get_object_or_404
 from .models import Client,Car,House,Home_appliance,Spar_parts,Clothing,Laptop_phone,Accessory
-from django.http import HttpResponse, JsonResponse
+from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
 from itertools import zip_longest
 from django.contrib.auth import authenticate, login
+from django.contrib.auth.hashers import check_password
 
 
 
@@ -10,17 +11,36 @@ from django.contrib.auth import authenticate, login
 # Create your views here.
 
 def index(request):
-    return render(request,'index.html')
+    all_cars = Car.objects.filter(approved=1)
+    all_houses = House.objects.filter(approved=1)
+    
+    chunked_cars = zip_longest(*[iter(all_cars)] * 3, fillvalue=None)
+    chunked_houses = zip_longest(*[iter(all_houses)] * 3, fillvalue=None)
+    
+    return render(request, 'index.html', {'all_cars': all_cars, 'all_houses': all_houses, 
+                                          'chunked_cars': chunked_cars, 'chunked_houses': chunked_houses})
 
 def cars(request):
     all_cars = Car.objects.filter(approved =1)
     chunked_items = zip_longest(*[iter(all_cars)]*3, fillvalue=None) 
     return render(request,'cars.html',{'all_c' : all_cars, 'chunked_items': chunked_items,})
 
+def search(request):
+    query = request.GET.get('query')
+    search_results = None
+    
+    if query:
+        search_results = Car.objects.filter(brand=query)
+        
+    return render(request, 'search.html', {'search_results': search_results})
 
 def profil(request):
-    persons = Client.objects.all()
-    return render(request,'profil.html', {'person' : persons})
+    if request.user.is_authenticated:
+        client = Client.objects.get(email=request.user.email)
+        return render(request, 'profil.html', {'client': client})
+    else:
+        return render(request, 'lo.html')
+
 
 def piece(request):
     all_pieces = Spar_parts.objects.all()
@@ -60,14 +80,18 @@ def item_home(request):
     return render(request,'it.html', {'home_appliance' :Home_appliance ,'person' : persons})
 
 
-def item_car(request):
-    cars = Car.objects.all()
-    try:
-        img = Car.objects.get(brand=request.GET.get('brand'))
-    except Car.DoesNotExist:
-        img = None
-    persons = Client.objects.all()
-    return render(request,'item_car.html',{'cars' : cars, 'person' : persons,  'img': img if img else None})
+def item_car(request, item_id ):
+    car = get_object_or_404(Car, id=item_id)
+    brand = request.GET.get('brand')
+    img = None
+    if brand:
+        try:
+            img = Car.objects.get(brand=request.GET.get('brand'))
+        except Car.DoesNotExist:
+            pass
+    client = Client.objects.all()
+    return render(request, 'item_car.html', {'car': car, 'client': client, 'img': img if img else None})
+
 
 def sign(request):
         if request.method == 'POST':
@@ -91,26 +115,48 @@ def categorie(request):
     return render(request,'categorie.html')
 
 def immobilier(request):
-    return render(request,'im.html')
+    all_houses = House.objects.filter(approved=1)
+    chunked_items = zip_longest(*[iter(all_houses)]*3, fillvalue=None) 
+    return render(request,'im.html',{'all_h' : all_houses, 'chunked_items': chunked_items,})
+    
 
-def login(request):
+
+
+
+
+def log(request):
     if request.method == 'POST':
-        username = request.POST.get('username')
+        email = request.POST.get('email')
         password = request.POST.get('password')
-        user = authenticate(request, username=username, password=password)
-        if user is not None:
-            login(request, user)
-            return redirect('home')
+
+        try:
+            client = Client.objects.get(email=email)
+        except Client.DoesNotExist:
+            client = None
+
+        if client is not None :
+            check_password(password, client.password)
+            request.session['client_id'] = client.id
+
+            
+
+            if email.endswith('@buybay.com'):
+                return redirect('mod.html')  
+            else:
+                return redirect('index.html') 
         else:
-            error_message = 'Invalid username or password.'
-            return render(request, 'login.html', {'error_message': error_message})
-    return render(request,'lo.html')
+            error_message = "Invalid email or password."
+            return redirect('lo.html')  
+    else:
+        return render(request, 'lo.html')
+
 
 
 
 def mod(request):
     cars = Car.objects.filter(approved=0)
-    return render(request,'mod.html', {'cars': cars})
+    houses = House.objects.filter(approved=0)
+    return render(request,'mod.html', {'cars': cars , 'houses': houses })
 
 def home(request):
     return render(request,'home.html')
@@ -170,6 +216,8 @@ def new1(request):
         fuel = request.POST.get('fuel')
         image = request.FILES.get('image')
         price = request.POST.get('Price')
+        
+
 
         if image is None:
             pass
@@ -210,7 +258,6 @@ def new2(request):
             category=category
         )
         house.save()
-        messages.success(request, 'House added successfully')
         return redirect('im.html')
     return HttpResponse("Response")
 
@@ -354,10 +401,22 @@ def moderator_page(request):
     return render(request, 'moderator/mod1.html', {'unapproved_posts': unapproved_posts})
 
 def approve_post(request, id):
+    try:
         car = Car.objects.get(id=id)
         car.approved = True
         car.save()
-        return redirect('mod')
+    except Car.DoesNotExist:
+        pass
+
+    try:
+        house = House.objects.get(id=id)
+        house.approved = True
+        house.save()
+    except House.DoesNotExist:
+        pass
+
+    return redirect('mod')
+
 
 
 def reject_post(request, id):
@@ -365,3 +424,12 @@ def reject_post(request, id):
     post = Car.objects.get(id=id)
     post.delete()
     return redirect('mod.html')
+
+
+def search_results(request):
+    if request.method == 'POST':
+        search_query = request.POST.get('search_query')
+        results = Car.objects.filter(brand=search_query, model=search_query) if search_query else Car.objects.all()  
+        return render(request, 'cars.html', {'results': results})
+    else:
+        return render(request, 'index.html')

@@ -19,7 +19,7 @@ class Client(models.Model):
     nom = models.CharField(max_length=50)
     prenom = models.CharField(max_length=50)
     num_telephone = models.CharField(max_length=15,null=True)
-    email = models.CharField(max_length=100)
+    email = models.EmailField(max_length=100)
     password = models.CharField(max_length=255)
 
     class Meta:

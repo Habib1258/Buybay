@@ -96,82 +96,32 @@
                 </a>
             </div>
            
-           <a href="#"><div class="h1"><h1>Immobilier</h1></div></a>
-           <section class="sec2">
-                
-            <div class="blo-1">
-                <a href="item1.html"  rel="golf7">
-                    <img src="{% static "/img/d1.jpg" %}" width="100%">
-                    <br>
-                    <h1>Maison F7</h1>
-                    <h3>tres belle maison </h3>
-                    <br>
-                    <h2>Prix : <span class="danger">7 milliards</span></h2>
-                </a>
-                
-            </div>
-            <div class="blo-1">
-                    <img src="{% static "/img/d2.jpg" %}" width="100%" >
-                    <br>
-                    <h1>Maison F5</h1>
-                    <h3>spacieuse et dans un qarties calme </h3>
-                    <br>
-                    <h2>Prix : <span class="danger">4,3 milliards</span></h2>
-                
-            </div>
-            <div class="blo-1">
-                    <img src="{% static "/img/d3.jpg" %}" width="100%" >
-                    <br>
-                    <h1>Maison f4</h1>
-                    <h3>tres belle maison </h3>
-                    <br>
-                    <h2>Prix : <span class="danger">1,3 milliards</span></h2>
-            </div>
-        </section>
-        <section class="sec2">
-                
-            <div class="blo-1">
-                <a href="item.html"  rel="golf7">
-                    <img src="{% static "/img/d4.jpg" %}" width="100%">
-                    <br>
-                    <h1>Villa F4</h1>
-                    <h3>tres belle villa </h3>
-                    <br>
-                    <h2>Prix : <span class="danger">2,6 milliards</span></h2>
-                </a>
-                
-            </div>
-            <div class="blo-1">
-                    <img src="{% static "/img/d5.jpg" %}" width="100%" >
-                    <br>
-                    <h1>villa F6</h1>
-                    <h3>tres belle Maison </h3>
-                    <br>
-                    <h2>Prix : <span class="danger">3,1 milliards</span></h2>
-                
-            </div>
-            <div class="blo-1">
-                    <img src="{% static "/img/d6.jpg" %}" width="100%" >
-                    <br>
-                    <h1>Maison F3</h1>
-                    <h3>tres belle Maison </h3>
-                    <br>
-                    <h2>Prix : <span class="danger">1,9 milliards</span></h2>
-            </div>
-        </section>
+           <a href="#"><div class="h1"><h1>Houses</h1></div></a>
+           {% for chunks in chunked_items %}
+                <section class="sec2">
+                    {% for house in chunks %} 
+                        {% if house %}
+                            <div class="blo-1">
+                                <a href="item_house.html">
+                                    {% if house.image %}
+                                        <img src="buybay_logic/{{house.image}}" alt="{{ house.Type }}" width="100%">   
+                                    {% else %}
+                                        <img src="{% static 'buybay_logic/images/d3.jpg' %}" alt="Default Image" width="100">
+                                    {% endif %}
+                                    <br>
+                                    <h1>{{ house.Type }} {{ house.area }}</h1>
+                                    <h3><strong>{{ house.location }}</strong></h3>
+                                    <br>
+                                    <h2>Prix : <span class="danger">{{ house.price }}</span></h2>
+                                </a>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </section>
+            {%endfor%}
+        
             <br>
-            <div class="Social">
-                <div class="header4">
-                    <h2>Social Media </h2>
-                    <br>
-                        <a href="https://www.instagram.com/habib__mustapha/"><i class="fa fa-instagram" style="font-size:36px"></i></a>
-                        <a href="https://web.facebook.com/habib.mustapha.9210"><i class="fa fa-facebook" style="font-size:36px"></i></a>
-                        <a href="https://twitter.com/Habib49485244"><i class="fa fa-twitter" style="font-size:36px"></i></a>
-                        <a href="https://github.com/Habib1258"><i class="fa fa-github" style="font-size:36px"></i></a>
-                </div>
-                
-                
-            </div>
+            
         </main>
         <!-- end main content--> 
         <div class="cont">

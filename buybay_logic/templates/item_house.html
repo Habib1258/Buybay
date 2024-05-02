@@ -71,7 +71,7 @@
             <br>
            
             <div class="conte">
-                <a href="cars.html">
+                <a href="im.html">
                     <button class="ret">
                         <span class="material-icons-sharp">
                             keyboard_return
@@ -80,38 +80,33 @@
                 </a>
                 <br>
                 <br>
-                <div class="blo-1">
-                        <h1 style="text-decoration: underline;">VW golf 7 </h1>
-                        
-                            <br>
-                        <div class="slider">    
-                            <div class="slides">
-                                <img src="{% static "/img/golf.jpg" %}" class="images"  >
-                                <img src="{% static "/img/golf1.jpg" %}" class="images" >
-                                <img src="{% static "/img/golf2.jpg" %}" class="images" >
-                                <img src="{% static "/img/golf3.jpg" %}" class="images" >
+                {% for house in houses|slice:"1" %}
+                    <div class="blo-1">
+                            <h1 style="text-decoration: underline;"> {{house.Type}} {{house.area}} </h1>
+                            
                                 <br>
-                            </div>
-                            <div class="button">
-                                <button class="pr" onclick="moveSlide(-1)"><</button>
-                                <button class="ne" onclick="moveSlide(1)">></button><br><br>
-                            </div>
-                        </div>
-                        {% if car %}
-                        {% for product in products %}
-                            <h2 style="text-decoration: underline;">Prix : <span class="danger">290 M</span></h2><br>
-                            <h3><span class="cara">  - Marque :</span> VW</h3><br>
-                            <h3><span class="cara">  - Annee :</span> 2019</h3><br>
-                            <h3><span class="cara">  - Moteur :</span> 2.0 TSI</h3><br>
-                            <h3><span class="cara">  - Energie :</span> Essence</h3><br>
-                            <h3><span class="cara">  - Kilometrage:</span> 204.453KM</h3><br>
-                            <h2 style="text-decoration: underline;">Description : </h2><br>
-                            <h3>Tres belle voiture machiya 200000km </h3>
-                            <div class="like-container">
+                            <div class="slider">    
+                                <div class="slides">
+                                    <img src= "buybay_logic/{{house.image}}" class="images">
+                                    <br>
+                                </div>
                                 
-                            </div>
-                            <br>
-                </div>
+                            </div><br>
+                                <h2 style="text-decoration: underline;">Prix : <span class="danger"> {{house.price}}</span></h2><br>
+                                <h3><span class="cara">  - Type :</span> {{house.Type}}</h3><br>
+                                <h3><span class="cara">  - Area :</span> {{house.area}}</h3><br>
+                                <h3><span class="cara">  - Location :</span> {{house.location}}</h3><br>
+                                <h3><span class="cara">  - Facade :</span> {{house.facade}}</h3><br>
+                                <h3><span class="cara">  - Rooms :</span> {{house.rooms}}</h3><br>
+                                <h3><span class="cara">  - Floors:</span> {{house.floor}}</h3><br>
+                                <h2 style="text-decoration: underline;">Description : </h2><br>
+                                <h3>{{house.description}} </h3>
+                                <div class="like-container">
+                                    
+                                </div>
+                                <br>
+                    </div>
+                {% endfor %}
             </div>  
             <br>    
             <div class="conte">
@@ -119,17 +114,22 @@
                 <div class="blo1">
                         <h1 style="text-decoration: underline;">Contact : </h1>
                             <br>
-                            {% for per in person%}
-                            <div class="co"><span class="ico">
-                                <i class="fa fa-user"></i>
-                            </span><h2>Name : {{ per.nom }}  {{ per.prenom }} </h2><br></div>
-                            <div class="co"><span class="ico">
-                                <i class="fa fa-phone"></i>
-                            </span><h2>Phone :<span class="po">  {{ per.num_telephone }} </span></h2><br></div>
-                            <div class="co"><span class="ico">
-                                <i class="fa fa-envelope"></i>
-                            </span><h2>E-mail : <span class="em">{{ per.email }}</span><br></div>
-                        {%endfor%}
+                            {% if client.is_authenticated %}
+                            <span class="ico">
+                                <i class="fa fa-user-circle"></i> 
+                            </span>
+                            <h3 style="font-size: 20px;font-weight: bold;">{{ client.nom }} {{ client.prenom }}</h3><br>
+                            <span class="ico">
+                                <i class="fa fa-hashtag"></i> 
+                            </span>
+                            <h2>Numero : #{{ client.id }}</h2><br>
+                            <span class="ico">
+                                <i class="fa fa-phone"></i> 
+                            </span>
+                            <h2>Phone : {{ client.num_telephone }}</h2>
+                        {% else %}
+                            <p>Please log in to view profile information.</p>
+                        {% endif %}
                             
                           
                 </div>

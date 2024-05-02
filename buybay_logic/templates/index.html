@@ -61,10 +61,20 @@
             
             <div class="sear">
                 
-                <a href="#">
-                    <input type="text" placeholder="Search...">
+                <form action="{% url 'search_results' %}" method="post">
+                    {% csrf_token %}
+                    <input type="text" name="search_query" placeholder="Search...">
                     <button type="submit" class="bouu"><img src="{% static "/img/sharp_search_black_18dp.png" %}" alt=""></button>
-                </a>
+
+                    {% if results %}
+                        <h2>Search Results</h2>
+                        <ul>
+                            {% for result in results %}
+                                <li>{{ result }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </form>
             </div>
             <a href="cars.html"><div class="see1" style="padding-top: 40px;"><h1>Categories</h1></div></a>
             <section class="sec2">
@@ -105,86 +115,54 @@
             
            <!--cars-->
            <a href="cars.html"><div class="h1" style="padding-top: 10px;"><h1>Cars</h1></div></a>
-            
+           {% for chunks in chunked_cars %}
                 <section class="sec2">
-                <div class="blo-1">
-                    <a href="item_car.html">
-                        <img src="{% static "/img/golf.jpg" %}" width="100%">
-                        
-                        <br>
-                        <h1>Golf 7 R</h1>
-                        <h3>tres belle voiture </h3>
-                        <br>
-                        <h2>Prix : <span class="danger">290 M</span></h2>
-                    </a>
-                    
-                </div>
-                <div class="blo-1">
-                    <a href="it1.html"   rel="Saidal website"  >
-                        <img src="{% static "/img/bmw.jpg" %}" width="100%" >
-                        <br>
-                        <h1>Bmw m5</h1>
-                        <h3>tres belle voiture </h3>
-                        <br>
-                        <h2>Prix : <span class="danger">1,1 milliards</span></h2>
-                    </a>
-                    
-                </div>
-                <div class="blo-1">
-                    <a href="it2.html">
-                        <img src="{% static "/img/suv.jpg" %}" width="100%" >
-                        <br>
-                        <h1>Range rover</h1>
-                        <h3>tres belle voiture </h3>
-                        <br>
-                        <h2>Prix : <span class="danger">600 M</span></h2>
-                    </a>
-                    <button type="submit" class="bun">
-                        <img src="{% static "/img/sharp_favorite_border_white_18dp.png" %}" class="im"></button>
-                    
-                </div>
-            </section>
+                    {% for car in chunks %} 
+                        {% if car %}
+                            <div class="blo-1">
+                                <a href="{% url 'item_car' car.id %}">
+                                    {% if car.image %}
+                                        <img src="buybay_logic/{{car.image}}" alt="{{ car.brand }}" width="100%">   
+                                    {% else %}
+                                        <img src="{% static 'buybay_logic/images/bmw.jpg' %}" alt="Default Image" width="100">
+                                    {% endif %}
+                                    <br>
+                                    <h1>{{ car.brand }} {{ car.model }}</h1>
+                                    <h3><strong>{{ car.des }}</strong></h3>
+                                    <br>
+                                    <h2>Prix : <span class="danger">{{ car.price }}</span></h2>
+                                </a>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </section>
+            {%endfor%}
             <!--immobilier-->
             <br>
-            <a href="im.html"><div class="h1"><h1>Immobilier</h1></div></a>
+            <a href="im.html"><div class="h1"><h1>Houses</h1></div></a>
             <br>
-            <section class="sec2">
-                <div class="blo-1">
-                    <a href="item1.html">
-                        <img src="{% static "/img/d1.JPG" %}" width="100%">
-                        <h1>Maison F8 </h1>
-                            <h3>Une grande maison avec piscine</h3>
-                            <br>
-                            <h2>Prix : <span class="danger">4 milliards</span></h2>
-                    </a>
-                    <button type="submit" class="bun">
-                        <img src="{% static "/img/sharp_favorite_border_white_18dp.png" %}" class="im"></button>
-                </div>
-                <div class="blo-1">
-                    <a href="item2.html">
-                        <img src="{% static "/img/d2.jpg" %}" width="100%" >
-                        <br>
-                        <h1>Maison f5</h1>
-                        <h3>tres belle maison </h3>
-                        <br>
-                        <h2>Prix : <span class="danger">3,4 milliards</span></h2>
-                    </a>
-                    <button type="submit" class="bun">
-                        <img src="{% static "/img/sharp_favorite_border_white_18dp.png" %}" class="im"></button>
-                </div>
-                <div class="blo-1">
-                    <a href="item3.html">
-                        <img src="{% static "/img/d3.jpg" %}" width="100%" >
-                        <br>
-                        <h1>maison F3</h1>
-                        <h3>tres belle villa </h3>
-                        <br>
-                        <h2>Prix : <span class="danger">1,2 milliards</span></h2>
-                    </a>
-                    <button type="submit" class="bun">
-                        <img src="{% static "/img/fa.png" %}" class="im"></button>
-                </div>
-            </section>
+            {% for chunks in chunked_houses %}
+                <section class="sec2">
+                    {% for house in chunks %} 
+                        {% if house %}
+                            <div class="blo-1">
+                                <a href="item_house.html">
+                                    {% if house.image %}
+                                        <img src="buybay_logic/{{house.image}}" alt="{{ house.Type }}" width="100%">   
+                                    {% else %}
+                                        <img src="{% static 'buybay_logic/images/d3.jpg' %}" alt="Default Image" width="100">
+                                    {% endif %}
+                                    <br>
+                                    <h1>{{ house.Type }} {{ house.area }}</h1>
+                                    <h3><strong>{{ house.location }}</strong></h3>
+                                    <br>
+                                    <h2>Prix : <span class="danger">{{ house.price }}</span></h2>
+                                </a>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </section>
+            {%endfor%}
             <!--piece-->
             <br>
             <a href="pie.html"><div class="h1"><h1>spare part</h1></div></a>

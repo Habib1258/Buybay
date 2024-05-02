@@ -51,6 +51,30 @@
                         </td>
                     </tr>
                 {% endfor %}
+                {% for house in houses %}
+                    <tr id="house-{{ house.id }}">
+                        <td>{{house.id}}</td>
+                        <td>{{house.type}}</td>
+                        <td>{{house.category}}</td>
+                        <td>{{house.area}}</td>
+                        <td><img src= "buybay_logic/{{house.image}}" class="images" width="40%"></td>
+                        <td class="des">{{house.des}}</td>
+                        <td>{{house.price}}</td>
+                        <td class="line">
+                            {% if not house.approved %}
+                                <form action="{% url 'approve_post' id=house.id %}" method="post">
+                                    {% csrf_token %}
+                                    <button type="submit" class="btn">Approve</button>
+                                </form>
+                            <br>
+                                <form action="{% url 'reject_post' id=house.id %}" method="post">
+                                    {% csrf_token %}
+                                    <button type="submit" class="btn">Delete</button>
+                                </form>
+                            {% endif %}
+                        </td>
+                    </tr>
+                {% endfor %}
             
         </tbody>
         

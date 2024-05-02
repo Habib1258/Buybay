@@ -13,7 +13,7 @@ urlpatterns = [
     path('profil.html',views.profil, name="profil"),
     path('an.html',views.an, name="an"),
     path('im.html',views.immobilier, name="immobilier"),
-    path('lo.html',views.login, name="login"),
+    path('lo.html',views.log, name="log"),
     path('pie.html',views.piece, name="piece"),
     path('si.html',views.sign, name="sign"),
     path('categorie.html',views.categorie, name="categorie"),
@@ -43,6 +43,8 @@ urlpatterns = [
     path('approve/<int:id>/', views.approve_post, name='approve_post'),
     path('reject/<int:id>/', views.reject_post, name='reject_post'),
     path('mod.html', views.moderator_page, name='mod'),
+    path('search.html/', views.search_results, name='search_results'),
+    path('item_car/<int:item_id>/', views.item_car, name='item_car'),
     
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -89,7 +89,7 @@
                     <button type="submit"  class="but1">
                         <span class="material-icons-sharp">
                             tune
-                        </span> <h3 class="h12">Filter</h3></button>
+                        </span> <h3 class="h12">filter</h3></button>
                 </div>
 
                 
@@ -108,28 +108,35 @@
            <!--cars-->
            
             <a href="cars.html"><div class="h1" style="padding-top: 10px;"><h1>Cars</h1></div></a>
-            {% for chunks in chunked_items %}
-                <section class="sec2">
-                    {% for car in chunks %} 
-                        {% if car %}
-                            <div class="blo-1">
-                                <a href="{% url 'item_car' car.id %}">
-                                    {% if car.image %}
-                                        <img src="buybay_logic/{{car.image}}" alt="{{ car.brand }}" width="100%">   
-                                    {% else %}
-                                        <img src="{% static 'buybay_logic/images/bmw.jpg' %}" alt="Default Image" width="100">
-                                    {% endif %}
-                                    <br>
-                                    <h1>{{ car.brand }} {{ car.model }}</h1>
-                                    <h3><strong>{{ car.des }}</strong></h3>
-                                    <br>
-                                    <h2>Prix : <span class="danger">{{ car.price }}</span></h2>
-                                </a>
-                            </div>
-                        {% endif %}
-                    {% endfor %}
-                </section>
-            {%endfor%}
+            <form action="{% url 'search_results' %}" method="post">
+                {% csrf_token %}
+                {% for result in results %}
+                    <section class="sec2">
+                        {% for car in result %} 
+                            {% if car %}
+                                <div class="blo-1">
+                                    <a href="item_car.html">
+                                        {% if car.image %}
+                                            <img src="buybay_logic/{{car.image}}" alt="{{ car.brand }}" width="100%">   
+                                        {% else %}
+                                            <img src="{% static 'buybay_logic/images/bmw.jpg' %}" alt="Default Image" width="100">
+                                        {% endif %}
+                                        <br>
+                                        <h1>{{ car.brand }} {{ car.model }}</h1>
+                                        <h3><strong>{{ car.des }}</strong></h3>
+                                        <br>
+                                        <h2>Prix : <span class="danger">{{ car.price }}</span></h2>
+                                    </a>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    </section>
+                {%endfor%}
+            </form>
+            
+                
+                
+            
             
             <br>
                 
